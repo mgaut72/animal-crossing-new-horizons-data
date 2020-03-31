@@ -1,0 +1,1 @@
+jq -s 'sort_by(.price)[]'

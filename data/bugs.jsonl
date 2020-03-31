@@ -1,0 +1,80 @@
+{"name":"Common Butterfly","location":"Flying","price":160,"times":[{"start":4,"end":19}],"months":{"north":[{"start":9,"end":6}],"south":[{"start":3,"end":12}]}}
+{"name":"Yellow Butterfly","location":"Flying","price":160,"times":[{"start":4,"end":19}],"months":{"north":[{"start":3,"end":6},{"start":9,"end":10}],"south":[{"start":3,"end":4},{"start":9,"end":12}]}}
+{"name":"Tiger Butterfly","location":"Flying","price":240,"times":[{"start":4,"end":19}],"months":{"north":[{"start":3,"end":9}],"south":[{"start":9,"end":3}]}}
+{"name":"Peacock Butterfly","location":"Flying","price":2500,"times":[{"start":4,"end":19}],"months":{"north":[{"start":3,"end":6}],"south":[{"start":9,"end":12}]}}
+{"name":"Common Bluebottle","location":"Flying","price":300,"times":[{"start":4,"end":19}],"months":{"north":[{"start":4,"end":8}],"south":[{"start":10,"end":2}]}}
+{"name":"Paper Kite Butterfly","location":"Flying","price":1000,"times":[{"start":8,"end":19}],"months":"All"}
+{"name":"Great Purple Emperor","location":"Flying","price":3000,"times":[{"start":4,"end":19}],"months":{"north":[{"start":5,"end":8}],"south":[{"start":11,"end":2}]}}
+{"name":"Monach Butterfly","location":"Flying","price":140,"times":[{"start":4,"end":17}],"months":{"north":[{"start":9,"end":11}],"south":[{"start":3,"end":5}]}}
+{"name":"Emperor Butterfly","location":"Flying","price":4000,"times":[{"start":17,"end":8}],"months":{"north":[{"start":6,"end":9},{"start":12,"end":3}],"south":[{"start":12,"end":3},{"start":6,"end":9}]}}
+{"name":"Agrias Butterfly","location":"Flying","price":3000,"times":[{"start":8,"end":17}],"months":{"north":[{"start":4,"end":9}],"south":[{"start":11,"end":3}]}}
+{"name":"Raja Brooke's Birdwing","location":"Flying","price":2500,"times":[{"start":8,"end":17}],"months":{"north":[{"start":4,"end":9},{"start":12,"end":2}],"south":[{"start":11,"end":3},{"start":6,"end":8}]}}
+{"name":"Queen Alexandra's Birdwing","location":"Flying","price":4000,"times":[{"start":8,"end":16}],"months":{"north":[{"start":5,"end":9}],"south":[{"start":11,"end":3}]}}
+{"name":"Moth","location":"Flying by light","price":130,"times":[{"start":19,"end":4}],"months":"All"}
+{"name":"Atlas Moth","location":"On trees","price":3000,"times":[{"start":19,"end":4}],"months":{"north":[{"start":4,"end":9}],"south":[{"start":10,"end":3}]}}
+{"name":"Madagascan Sunset Moth","location":"Flying","price":2500,"times":[{"start":8,"end":16}],"months":{"north":[{"start":4,"end":9}],"south":[{"start":10,"end":3}]}}
+{"name":"Long Locust","location":"On ground","price":200,"times":[{"start":8,"end":19}],"months":{"north":[{"start":4,"end":11}],"south":[{"start":11,"end":5}]}}
+{"name":"Migratory Locust","location":"On ground","price":600,"times":[{"start":8,"end":19}],"months":{"north":[{"start":8,"end":11}],"south":[{"start":2,"end":5}]}}
+{"name":"Rice Grasshopper","location":"On ground","price":160,"times":[{"start":8,"end":19}],"months":{"north":[{"start":8,"end":11}],"south":[{"start":2,"end":5}]}}
+{"name":"Grasshopper","location":"On ground","price":160,"times":[{"start":8,"end":17}],"months":{"north":[{"start":7,"end":9}],"south":[{"start":1,"end":3}]}}
+{"name":"Cricket","location":"Dig at cricket noise","price":130,"times":[{"start":17,"end":8}],"months":{"north":[{"start":9,"end":11}],"south":[{"start":3,"end":5}]}}
+{"name":"Bell Cricket","location":"On ground","price":430,"times":[{"start":17,"end":8}],"months":{"north":[{"start":9,"end":10}],"south":[{"start":3,"end":4}]}}
+{"name":"Mantis","location":"On flowers","price":430,"times":[{"start":8,"end":17}],"months":{"north":[{"start":3,"end":11}],"south":[{"start":9,"end":5}]}}
+{"name":"Orchid Mantis","location":"On white flowers","price":2400,"times":[{"start":8,"end":17}],"months":{"north":[{"start":3,"end":11}],"south":[{"start":9,"end":5}]}}
+{"name":"Honeybee","location":"Flying","price":200,"times":[{"start":8,"end":17}],"months":{"north":[{"start":3,"end":7}],"south":[{"start":3,"end":7}]}}
+{"name":"Wasp","location":"Falls from shaking trees","price":2500,"times":"All","months":"All"}
+{"name":"Brown Cicada","location":"On trees","price":250,"times":[{"start":8,"end":17}],"months":{"north":[{"start":7,"end":8}],"south":[{"start":1,"end":2}]}}
+{"name":"Robust Cicada","location":"On trees","price":300,"times":[{"start":8,"end":17}],"months":{"north":[{"start":7,"end":8}],"south":[{"start":1,"end":2}]}}
+{"name":"Giant Cicada","location":"On trees","price":600,"times":[{"start":8,"end":17}],"months":{"north":[{"start":7,"end":8}],"south":[{"start":1,"end":2}]}}
+{"name":"Walker Cicada","location":"On trees","price":400,"times":[{"start":8,"end":17}],"months":{"north":[{"start":8,"end":9}],"south":[{"start":2,"end":3}]}}
+{"name":"Evening Cicada","location":"On trees","price":660,"times":[{"start":4,"end":8},{"start":16,"end":19}],"months":{"north":[{"start":7,"end":8}],"south":[{"start":1,"end":2}]}}
+{"name":"Cicada Shell","location":"On trees","price":10,"times":"All","months":{"north":[{"start":7,"end":8}],"south":[{"start":1,"end":2}]}}
+{"name":"Red Dragonfly","location":"Flying","price":180,"times":[{"start":8,"end":19}],"months":{"north":[{"start":9,"end":10}],"south":[{"start":3,"end":4}]}}
+{"name":"Darner Dragonfly","location":"Flying","price":230,"times":[{"start":8,"end":17}],"months":{"north":[{"start":4,"end":10}],"south":[{"start":10,"end":4}]}}
+{"name":"Banded Dragonfly","location":"Flying","price":4500,"times":[{"start":8,"end":17}],"months":{"north":[{"start":5,"end":10}],"south":[{"start":11,"end":4}]}}
+{"name":"Damselfly","location":"Flying","price":500,"times":"All","months":{"north":[{"start":11,"end":2}],"south":[{"start":5,"end":8}]}}
+{"name":"Firefly","location":"Flying","price":400,"times":[{"start":19,"end":4}],"months":{"north":[{"start":6,"end":6}],"south":[{"start":12,"end":12}]}}
+{"name":"Mole Cricket","location":"Underground","price":500,"times":"All","months":{"north":[{"start":11,"end":5}],"south":[{"start":5,"end":11}]}}
+{"name":"Pondskater","location":"Ponds","price":130,"times":[{"start":8,"end":19}],"months":{"north":[{"start":5,"end":9}],"south":[{"start":11,"end":3}]}}
+{"name":"Diving Beetle","location":"Ponds and rivers","price":800,"times":[{"start":8,"end":19}],"months":{"north":[{"start":5,"end":9}],"south":[{"start":11,"end":3}]}}
+{"name":"Giant Water Bug","location":"Ponds and rivers","price":2000,"times":[{"start":19,"end":8}],"months":{"north":[{"start":4,"end":9}],"south":[{"start":10,"end":3}]}}
+{"name":"Stinkbug","location":"On flowers","price":120,"times":"All","months":{"north":[{"start":3,"end":11}],"south":[{"start":9,"end":5}]}}
+{"name":"Man-faced Stink Bug","location":"On flowers","price":1000,"times":[{"start":19,"end":8}],"months":{"north":[{"start":3,"end":11}],"south":[{"start":9,"end":5}]}}
+{"name":"Ladybug","location":"On flowers","price":200,"times":[{"start":8,"end":17}],"months":{"north":[{"start":3,"end":6},{"start":10,"end":10}],"south":[{"start":4,"end":4},{"start":9,"end":12}]}}
+{"name":"Tiger Beetle","location":"On ground","price":1500,"times":"All","months":{"north":[{"start":2,"end":11}],"south":[{"start":8,"end":5}]}}
+{"name":"Jewel Beetle","location":"On trees","price":2400,"times":"All","months":{"north":[{"start":4,"end":8}],"south":[{"start":10,"end":2}]}}
+{"name":"Violin Beetle","location":"On tree stumps","price":450,"times":"All","months":{"north":[{"start":5,"end":6},{"start":9,"end":11}],"south":[{"start":11,"end":12},{"start":3,"end":4}]}}
+{"name":"Citrus Long-horned Beetle","location":"On tree stumps","price":350,"times":"All","months":"All"}
+{"name":"Rosalia Batesi Beetle","location":"On tree stumps","price":3000,"times":"All","months":{"north":[{"start":5,"end":9}],"south":[{"start":11,"end":3}]}}
+{"name":"Blue Weevil Beetle","location":"On palm trees","price":800,"times":"All","months":{"north":[{"start":7,"end":8}],"south":[{"start":1,"end":2}]}}
+{"name":"Dung Beetle","location":"Pushing snowballs","price":3000,"times":"","months":{"north":[{"start":12,"end":2}],"south":[{"start":6,"end":8}]}}
+{"name":"Earth-boring Dung Beetle","location":"On ground","price":300,"times":"All","months":{"north":[{"start":7,"end":9}],"south":[{"start":1,"end":3}]}}
+{"name":"Scarab Beetle","location":"On trees","price":10000,"times":[{"start":23,"end":8}],"months":{"north":[{"start":7,"end":8}],"south":[{"start":1,"end":2}]}}
+{"name":"Drone Beetle","location":"On trees","price":200,"times":"All","months":{"north":[{"start":6,"end":8}],"south":[{"start":12,"end":2}]}}
+{"name":"Goliath Beetle","location":"On trees","price":8000,"times":[{"start":17,"end":8}],"months":{"north":[{"start":6,"end":9}],"south":[{"start":12,"end":3}]}}
+{"name":"Saw Stag","location":"On trees","price":2000,"times":"All","months":{"north":[{"start":7,"end":8}],"south":[{"start":1,"end":2}]}}
+{"name":"Miyama Stag","location":"On trees","price":1000,"times":"All","months":{"north":[{"start":7,"end":8}],"south":[{"start":1,"end":2}]}}
+{"name":"Giant Stag","location":"On trees","price":10000,"times":[{"start":23,"end":8}],"months":{"north":[{"start":7,"end":8}],"south":[{"start":1,"end":2}]}}
+{"name":"Rainbow Stag","location":"On trees","price":6000,"times":[{"start":19,"end":8}],"months":{"north":[{"start":6,"end":9}],"south":[{"start":12,"end":3}]}}
+{"name":"Cyclommatus Stag","location":"On trees","price":8000,"times":[{"start":17,"end":8}],"months":{"north":[{"start":7,"end":8}],"south":[{"start":1,"end":2}]}}
+{"name":"Golden Stag","location":"On trees","price":1200,"times":[{"start":17,"end":8}],"months":{"north":[{"start":7,"end":8}],"south":[{"start":1,"end":2}]}}
+{"name":"Giraffe Stag","location":"On trees","price":1200,"times":[{"start":17,"end":8}],"months":{"north":[{"start":7,"end":8}],"south":[{"start":1,"end":2}]}}
+{"name":"Horned Dynastid","location":"On trees","price":1350,"times":[{"start":17,"end":8}],"months":{"north":[{"start":7,"end":8}],"south":[{"start":1,"end":2}]}}
+{"name":"Horned Atlas","location":"On trees","price":8000,"times":[{"start":17,"end":8}],"months":{"north":[{"start":7,"end":8}],"south":[{"start":1,"end":2}]}}
+{"name":"Horned Elephant","location":"On trees","price":8000,"times":[{"start":17,"end":8}],"months":{"north":[{"start":7,"end":8}],"south":[{"start":1,"end":2}]}}
+{"name":"Horned Hercules","location":"On trees","price":1200,"times":[{"start":17,"end":8}],"months":{"north":[{"start":7,"end":8}],"south":[{"start":1,"end":2}]}}
+{"name":"Walking Stick","location":"Falls from shaking trees","price":600,"times":[{"start":4,"end":8},{"start":17,"end":19}],"months":{"north":[{"start":7,"end":11}],"south":[{"start":1,"end":5}]}}
+{"name":"Walking Leaf","location":"Near trees, disguised as furniture leaf","price":600,"times":"All","months":{"north":[{"start":7,"end":8}],"south":[{"start":1,"end":3}]}}
+{"name":"Bagworm","location":"Falls from shaking trees","price":600,"times":"All","months":"All"}
+{"name":"Ant","location":"On rotten food","price":80,"times":"All","months":"All"}
+{"name":"Hermit Crab","location":"Beach","price":1000,"times":[{"start":19,"end":8}],"months":"All"}
+{"name":"Wharf Roach","location":"On rocks at beach","price":200,"times":"All","months":"All"}
+{"name":"Fly","location":"On trash items","price":60,"times":"All","months":"All"}
+{"name":"Mosquito","location":"Flying","price":130,"times":[{"start":17,"end":4}],"months":{"north":[{"start":6,"end":9}],"south":[{"start":12,"end":3}]}}
+{"name":"Flea","location":"On villagers","price":70,"times":"All","months":{"north":[{"start":4,"end":11}],"south":[{"start":10,"end":5}]}}
+{"name":"Snail","location":"On rocks (raining)","price":250,"times":"All","months":"All"}
+{"name":"Pill Bug","location":"Hit rocks","price":250,"times":[{"start":23,"end":16}],"months":{"north":[{"start":9,"end":6}],"south":[{"start":3,"end":12}]}}
+{"name":"Centipede","location":"Hit rocks","price":300,"times":[{"start":16,"end":23}],"months":{"north":[{"start":9,"end":6}],"south":[{"start":3,"end":12}]}}
+{"name":"Spider","location":"Falls from shaking trees","price":480,"times":[{"start":19,"end":8}],"months":"All"}
+{"name":"Tarantula","location":"On ground","price":8000,"times":[{"start":19,"end":4}],"months":{"north":[{"start":11,"end":4}],"south":[{"start":5,"end":10}]}}
+{"name":"Scorpion","location":"On ground","price":8000,"times":[{"start":19,"end":4}],"months":{"north":[{"start":5,"end":10}],"south":[{"start":11,"end":4}]}}

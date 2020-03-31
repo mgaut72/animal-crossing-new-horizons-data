@@ -1,0 +1,15 @@
+month=${1-$(date +%-m)}
+hour=${2-$(date +%-H)}
+hemisphere=${2-north}
+jq --arg hemi $hemisphere --argjson month_num $month --argjson hour_num $hour 'select(
+        (
+            .months == "All" or
+            (any(.months[$hemi][]; (.start <= $month_num) and (.end >= $month_num))) or
+            (any(.months[$hemi][]; (.start >= $month_num) and (.start > .end) and (.end >= $month_num)))
+        ) and
+        (
+            .times == "All" or
+            (any(.times[]; (.start <= $hour_num) and (.end > $hour_num))) or
+            (any(.times[]; (.start >= $hour_num) and (.start > .end) and (.end > $hour_num)))
+        )
+        )'

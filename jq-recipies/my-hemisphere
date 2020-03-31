@@ -1,0 +1,2 @@
+hemisphere=${1-north}
+jq --arg hemi $hemisphere 'if .months == "All" then . else .months = .months[$hemi] end'

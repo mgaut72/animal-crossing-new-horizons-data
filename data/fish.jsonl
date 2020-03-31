@@ -1,0 +1,80 @@
+{"name":"Bitterling","price":900,"location":"River","times":"All","months":{"north":[{"start":11,"end":3}],"south":[{"start":5,"end":9}]}}
+{"name":"Pale Chub","price":200,"location":"River","times":[{"start":9,"end":16}],"months":"All"}
+{"name":"Crucian Carp","price":160,"location":"River","times":"All","months":"All"}
+{"name":"Dace","price":240,"location":"River","times":[{"start":16,"end":9}],"months":"All"}
+{"name":"Carp","price":300,"location":"Pond","times":"All","months":"All"}
+{"name":"Koi","price":4000,"location":"Pond","times":[{"start":16,"end":9}],"months":"All"}
+{"name":"Goldfish","price":1300,"location":"Pond","times":"All","months":"All"}
+{"name":"Pop-eyed Goldfish","price":1300,"location":"Pond","times":[{"start":9,"end":16}],"months":"All"}
+{"name":"Ranchu Goldfish","price":4500,"location":"Pond","times":[{"start":9,"end":16}],"months":"All"}
+{"name":"Killifish","price":300,"location":"Pond","times":"All","months":{"north":[{"start":4,"end":8}],"south":[{"start":10,"end":2}]}}
+{"name":"Crawfish","price":200,"location":"Pond","times":"All","months":{"north":[{"start":4,"end":9}],"south":[{"start":10,"end":3}]}}
+{"name":"Soft-shelled Turtle","price":3750,"location":"River","times":[{"start":16,"end":9}],"months":{"north":[{"start":8,"end":9}],"south":[{"start":2,"end":3}]}}
+{"name":"Snapping Turtle","price":5000,"location":"River","times":[{"start":21,"end":4}],"months":{"north":[{"start":4,"end":10}],"south":[{"start":10,"end":4}]}}
+{"name":"Tadpole","price":100,"location":"Pond","times":"All","months":{"north":[{"start":3,"end":7}],"south":[{"start":9,"end":1}]}}
+{"name":"Frog","price":120,"location":"Pond","times":"All","months":{"north":[{"start":5,"end":8}],"south":[{"start":11,"end":2}]}}
+{"name":"Freshwater Goby","price":400,"location":"River","times":[{"start":16,"end":9}],"months":"All"}
+{"name":"Loach","price":400,"location":"River","times":"All","months":{"north":[{"start":3,"end":5}],"south":[{"start":9,"end":11}]}}
+{"name":"Catfish","price":800,"location":"Pond","times":[{"start":16,"end":9}],"months":{"north":[{"start":5,"end":10}],"south":[{"start":11,"end":4}]}}
+{"name":"Giant Snakehead","price":5500,"location":"Pond","times":[{"start":9,"end":16}],"months":{"north":[{"start":5,"end":8}],"south":[{"start":11,"end":2}]}}
+{"name":"Bluegill","price":180,"location":"River","times":[{"start":9,"end":16}],"months":"All"}
+{"name":"Yellow Perch","price":300,"location":"River","times":"All","months":{"north":[{"start":10,"end":3}],"south":[{"start":4,"end":9}]}}
+{"name":"Black Bass","price":400,"location":"River","times":"All","months":"All"}
+{"name":"Tilapia","price":800,"location":"River","times":"All","months":{"north":[{"start":6,"end":10}],"south":[{"start":12,"end":4}]}}
+{"name":"Pike","price":1800,"location":"River","times":"All","months":{"north":[{"start":9,"end":12}],"south":[{"start":3,"end":6}]}}
+{"name":"Pond Smelt","price":400,"location":"River","times":"All","months":{"north":[{"start":12,"end":2}],"south":[{"start":6,"end":8}]}}
+{"name":"Sweetfish","price":900,"location":"River","times":"All","months":{"north":[{"start":7,"end":9}],"south":[{"start":12,"end":3}]}}
+{"name":"Cherry Salmon","price":1000,"location":"Clifftop river","times":"All","months":{"north":[{"start":3,"end":11}],"south":[{"start":9,"end":5}]}}
+{"name":"Char","price":3800,"location":"River","times":[{"start":16,"end":9}],"months":{"north":[{"start":3,"end":11}],"south":[{"start":9,"end":5}]}}
+{"name":"Golden Trout","price":15000,"location":"Clifftop river","times":[{"start":16,"end":9}],"months":{"north":[{"start":3,"end":11}],"south":[{"start":9,"end":5}]}}
+{"name":"Stringfish","price":15000,"location":"Clifftop river","times":[{"start":16,"end":9}],"months":{"north":[{"start":12,"end":3}],"south":[{"start":6,"end":9}]}}
+{"name":"Salmon","price":700,"location":"River mouth","times":"All","months":{"north":[{"start":9,"end":9}],"south":[{"start":3,"end":3}]}}
+{"name":"King Salmon","price":1800,"location":"River mouth","times":"All","months":{"north":[{"start":9,"end":9}],"south":[{"start":3,"end":3}]}}
+{"name":"Mitten Crab","price":2000,"location":"River","times":[{"start":16,"end":9}],"months":{"north":[{"start":9,"end":11}],"south":[{"start":3,"end":5}]}}
+{"name":"Guppy","price":1300,"location":"River","times":[{"start":9,"end":16}],"months":{"north":[{"start":4,"end":11}],"south":[{"start":10,"end":5}]}}
+{"name":"Nibble Fish","price":1500,"location":"River","times":[{"start":9,"end":16}],"months":{"north":[{"start":5,"end":9}],"south":[{"start":11,"end":4}]}}
+{"name":"Angelfish","price":3000,"location":"River","times":[{"start":16,"end":9}],"months":{"north":[{"start":5,"end":10}],"south":[{"start":11,"end":4}]}}
+{"name":"Betta","price":2500,"location":"River","times":[{"start":9,"end":16}],"months":{"north":[{"start":5,"end":9}],"south":[{"start":11,"end":3}]}}
+{"name":"Neon Tetra","price":500,"location":"River","times":[{"start":9,"end":16}],"months":{"north":[{"start":4,"end":11}],"south":[{"start":10,"end":5}]}}
+{"name":"Rainbowfish","price":800,"location":"River","times":[{"start":9,"end":16}],"months":{"north":[{"start":5,"end":10}],"south":[{"start":11,"end":4}]}}
+{"name":"Piranha","price":2500,"location":"River","times":[{"start":9,"end":16},{"start":21,"end":4}],"months":{"north":[{"start":6,"end":9}],"south":[{"start":12,"end":3}]}}
+{"name":"Arowana","price":10000,"location":"River","times":[{"start":16,"end":9}],"months":{"north":[{"start":6,"end":9}],"south":[{"start":12,"end":3}]}}
+{"name":"Dorado","price":15000,"location":"River","times":[{"start":4,"end":21}],"months":{"north":[{"start":6,"end":9}],"south":[{"start":12,"end":3}]}}
+{"name":"Gar","price":6000,"location":"Pond","times":[{"start":16,"end":9}],"months":{"north":[{"start":6,"end":9}],"south":[{"start":12,"end":3}]}}
+{"name":"Arapaima","price":10000,"location":"River","times":[{"start":16,"end":9}],"months":{"north":[{"start":6,"end":9}],"south":[{"start":12,"end":3}]}}
+{"name":"Saddled Birchir","price":4000,"location":"River","times":[{"start":21,"end":4}],"months":{"north":[{"start":6,"end":9}],"south":[{"start":12,"end":3}]}}
+{"name":"Sturgeon","price":10000,"location":"River mouth","times":"All","months":{"north":[{"start":9,"end":3}],"south":[{"start":3,"end":9}]}}
+{"name":"Sea Butterfly","price":1000,"location":"Sea","times":"All","months":{"north":[{"start":12,"end":3}],"south":[{"start":6,"end":9}]}}
+{"name":"Seahorse","price":1100,"location":"Sea","times":"All","months":{"north":[{"start":4,"end":11}],"south":[{"start":10,"end":5}]}}
+{"name":"Clownfish","price":650,"location":"Sea","times":"All","months":{"north":[{"start":4,"end":9}],"south":[{"start":10,"end":3}]}}
+{"name":"Surgeonfish","price":1000,"location":"Sea","times":"All","months":{"north":[{"start":4,"end":9}],"south":[{"start":10,"end":3}]}}
+{"name":"Butterfly Fish","price":1000,"location":"Sea","times":"All","months":{"north":[{"start":4,"end":9}],"south":[{"start":10,"end":3}]}}
+{"name":"Napoleonfish","price":10000,"location":"Sea","times":[{"start":4,"end":21}],"months":{"north":[{"start":7,"end":8}],"south":[{"start":1,"end":2}]}}
+{"name":"Zebra Turkeyfish","price":500,"location":"Sea","times":"All","months":{"north":[{"start":4,"end":11}],"south":[{"start":10,"end":5}]}}
+{"name":"Blowfish","price":5000,"location":"Sea","times":[{"start":21,"end":4}],"months":{"north":[{"start":11,"end":2}],"south":[{"start":5,"end":8}]}}
+{"name":"Puffer Fish","price":250,"location":"Sea","times":"All","months":{"north":[{"start":7,"end":9}],"south":[{"start":1,"end":3}]}}
+{"name":"Anchovy","price":200,"location":"Sea","times":[{"start":4,"end":21}],"months":"All"}
+{"name":"Horse Mackerel","price":150,"location":"Sea","times":"All","months":"All"}
+{"name":"Barred Knifejaw","price":5000,"location":"Sea","times":"All","months":{"north":[{"start":3,"end":11}],"south":[{"start":9,"end":5}]}}
+{"name":"Sea Bass","price":400,"location":"Sea","times":"All","months":"All"}
+{"name":"Red Snapper","price":3000,"location":"Sea","times":"All","months":"All"}
+{"name":"Dab","price":300,"location":"Sea","times":"All","months":{"north":[{"start":10,"end":4}],"south":[{"start":4,"end":10}]}}
+{"name":"Olive Flounder","price":800,"location":"Sea","times":"All","months":"All"}
+{"name":"Squid","price":500,"location":"Sea","times":"All","months":{"north":[{"start":12,"end":8}],"south":[{"start":6,"end":2}]}}
+{"name":"Moray Eel","price":2000,"location":"Sea","times":"All","months":{"north":[{"start":8,"end":10}],"south":[{"start":2,"end":4}]}}
+{"name":"Ribbon Eel","price":600,"location":"Sea","times":"All","months":{"north":[{"start":6,"end":10}],"south":[{"start":1,"end":4}]}}
+{"name":"Tuna","price":7000,"location":"Pier","times":"All","months":{"north":[{"start":11,"end":4}],"south":[{"start":5,"end":10}]}}
+{"name":"Blue Marlin","price":10000,"location":"Pier","times":"All","months":{"north":[{"start":7,"end":4}],"south":[{"start":1,"end":10}]}}
+{"name":"Giant Trevally","price":4500,"location":"Pier","times":"All","months":{"north":[{"start":5,"end":10}],"south":[{"start":11,"end":4}]}}
+{"name":"Mahi-mahi","price":6000,"location":"Pier","times":"All","months":{"north":[{"start":5,"end":10}],"south":[{"start":11,"end":4}]}}
+{"name":"Ocean Sunfish","price":4000,"location":"Sea","times":[{"start":4,"end":21}],"months":{"north":[{"start":7,"end":9}],"south":[{"start":1,"end":3}]}}
+{"name":"Ray","price":3000,"location":"Sea","times":[{"start":4,"end":21}],"months":{"north":[{"start":8,"end":11}],"south":[{"start":2,"end":5}]}}
+{"name":"Saw Shark","price":12000,"location":"Sea","times":[{"start":16,"end":9}],"months":{"north":[{"start":6,"end":9}],"south":[{"start":12,"end":3}]}}
+{"name":"Hammerhead Shark","price":8000,"location":"Sea","times":[{"start":16,"end":9}],"months":{"north":[{"start":6,"end":9}],"south":[{"start":12,"end":3}]}}
+{"name":"Great White Shark","price":15000,"location":"Sea","times":[{"start":16,"end":9}],"months":{"north":[{"start":6,"end":9}],"south":[{"start":12,"end":3}]}}
+{"name":"Whale Shark","price":13000,"location":"Sea","times":"All","months":{"north":[{"start":6,"end":9}],"south":[{"start":12,"end":3}]}}
+{"name":"Suckerfish","price":1500,"location":"Sea","times":"All","months":{"north":[{"start":6,"end":9}],"south":[{"start":12,"end":3}]}}
+{"name":"Football Fish","price":2500,"location":"Sea","times":[{"start":16,"end":9}],"months":{"north":[{"start":11,"end":3}],"south":[{"start":5,"end":9}]}}
+{"name":"Oarfish","price":9000,"location":"Sea","times":"All","months":{"north":[{"start":12,"end":5}],"south":[{"start":6,"end":11}]}}
+{"name":"Barreleye","price":15000,"location":"Sea","times":[{"start":21,"end":4}],"months":"All"}
+{"name":"Coelacanth","price":15000,"location":"Sea when raining","times":"All","months":"All"}

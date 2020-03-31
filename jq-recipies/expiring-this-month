@@ -1,0 +1,3 @@
+month=${1-$(date +%-m)}
+hemisphere=${2-north}
+jq --arg hemi $hemisphere --argjson month_num $month 'select(.months != "All" and any(.months[$hemi][]; .end == $month_num))'
