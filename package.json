@@ -4,15 +4,20 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@material-ui/core": "^4.9.8",
+    "@material-ui/icons": "^4.9.1",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
+    "bootstrap": "^4.4.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-scripts": "3.4.1"
   },
   "scripts": {
+    "prestart": "npm run preinstall",
     "start": "react-scripts start",
+    "preinstall": "cat data/bugs.jsonl | (echo 'export default ' && scripts/to-json-array) > src/bugs.js; cat data/fish.jsonl | (echo 'export default ' && scripts/to-json-array) > src/fish.js",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",

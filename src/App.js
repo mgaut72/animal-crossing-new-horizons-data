@@ -1,25 +1,12 @@
 import React from 'react';
-import logo from './logo.svg';
+import CreatureGrid from './CreatureGrid.js';
 import './App.css';
+import bugs from "./bugs.js";
+import fish from "./fish.js";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <CreatureGrid creatures={[...bugs, ...fish]}/>
   );
 }
 
