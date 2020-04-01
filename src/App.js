@@ -12,7 +12,8 @@ const allCreatures = [...bugs, ...fish];
 function fuse(searchList, searchVal) {
   var opts = {
     shouldSort: true,
-    keys: ["name"]
+    keys: ["name"],
+    minMatchCharLength: 2,
   };
   var fuse = new Fuse(searchList, opts);
   var res = fuse.search(searchVal);

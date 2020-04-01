@@ -5,6 +5,7 @@ import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 import NotificationsIcon from '@material-ui/icons/Notifications';
+import { timeRangesToStr, monthRangesToStr } from './DateTimeUtils';
 
 const useStyles = makeStyles((theme) => ({
   cardRoot: {
@@ -35,7 +36,7 @@ export default function CreatureCard(props) {
         <Typography className={classes.pos} color="textSecondary">
           {props.creature.type}
         </Typography>
-        <Grid container>
+        <Grid container alignItems="center">
           <Grid item xs={4}>
             <Typography>Price</Typography>
           </Grid>
@@ -50,6 +51,24 @@ export default function CreatureCard(props) {
           </Grid>
           <Grid item xs={8}>
             <Typography>{props.creature.location}</Typography>
+          </Grid>
+          <Grid item xs={4}>
+            <Typography>Active Time(s)</Typography>
+          </Grid>
+          <Grid item xs={8}>
+            <Typography>{timeRangesToStr(props.creature.times)}</Typography>
+          </Grid>
+          <Grid item xs={4}>
+            <Typography>Active Month(s) (North)</Typography>
+          </Grid>
+          <Grid item xs={8}>
+            <Typography>{monthRangesToStr(props.creature.months, "north")}</Typography>
+          </Grid>
+          <Grid item xs={4}>
+            <Typography>Active Month(s) (South)</Typography>
+          </Grid>
+          <Grid item xs={8}>
+            <Typography>{monthRangesToStr(props.creature.months, "south")}</Typography>
           </Grid>
         </Grid>
       </CardContent>
