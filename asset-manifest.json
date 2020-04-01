@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/new-horizons/static/css/main.5f361e03.chunk.css",
+    "main.js": "/new-horizons/static/js/main.2efa0e01.chunk.js",
+    "main.js.map": "/new-horizons/static/js/main.2efa0e01.chunk.js.map",
+    "runtime-main.js": "/new-horizons/static/js/runtime-main.101716a4.js",
+    "runtime-main.js.map": "/new-horizons/static/js/runtime-main.101716a4.js.map",
+    "static/css/2.89f067aa.chunk.css": "/new-horizons/static/css/2.89f067aa.chunk.css",
+    "static/js/2.9a5b0316.chunk.js": "/new-horizons/static/js/2.9a5b0316.chunk.js",
+    "static/js/2.9a5b0316.chunk.js.map": "/new-horizons/static/js/2.9a5b0316.chunk.js.map",
+    "index.html": "/new-horizons/index.html",
+    "precache-manifest.7db639280c25897f27ea7cf2fb6b7070.js": "/new-horizons/precache-manifest.7db639280c25897f27ea7cf2fb6b7070.js",
+    "service-worker.js": "/new-horizons/service-worker.js",
+    "static/css/2.89f067aa.chunk.css.map": "/new-horizons/static/css/2.89f067aa.chunk.css.map",
+    "static/css/main.5f361e03.chunk.css.map": "/new-horizons/static/css/main.5f361e03.chunk.css.map",
+    "static/js/2.9a5b0316.chunk.js.LICENSE.txt": "/new-horizons/static/js/2.9a5b0316.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.101716a4.js",
+    "static/css/2.89f067aa.chunk.css",
+    "static/js/2.9a5b0316.chunk.js",
+    "static/css/main.5f361e03.chunk.css",
+    "static/js/main.2efa0e01.chunk.js"
+  ]
+}
