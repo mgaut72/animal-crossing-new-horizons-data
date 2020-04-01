@@ -5,6 +5,7 @@ import Header from './Header';
 import './App.css';
 import bugs from "./bugs.js";
 import fish from "./fish.js";
+import _ from 'lodash';
 
 const allCreatures = [...bugs, ...fish];
 
@@ -28,9 +29,11 @@ function filterAllCreatures(searchString) {
 export default function App() {
   const [searchString, setSearchString] = useState("");
 
+  const search = _.debounce((text) => {setSearchString(text)}, 150);
+
   return (
     <div>
-      <Header searchString={searchString} onSearchChange={setSearchString}/>
+      <Header searchString={searchString} onSearchChange={search}/>
       <CreatureGrid creatures={filterAllCreatures(searchString)}/>
     </div>
   );
