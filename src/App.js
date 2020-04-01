@@ -29,11 +29,11 @@ function filterAllCreatures(searchString) {
 export default function App() {
   const [searchString, setSearchString] = useState("");
 
-  const search = _.debounce((text) => {setSearchString(text)}, 150);
+  const search = _.debounce((text) => {setSearchString(text)}, 120);
 
   return (
     <div>
-      <Header searchString={searchString} onSearchChange={search}/>
+      <Header onSearchChange={search}/>
       <CreatureGrid creatures={filterAllCreatures(searchString)}/>
     </div>
   );
