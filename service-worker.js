@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/animal-crossing-new-horizons-data/precache-manifest.24fcb0f0ca553f9a7463c48db27dcb3d.js"
+  "/animal-crossing-new-horizons-data/precache-manifest.cdd4a1b57cb0ea14e39b5ed8947d82f0.js"
 );
 
 self.addEventListener('message', (event) => {
