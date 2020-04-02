@@ -29,7 +29,10 @@ function applyAllFilters(searchString, hemisphere, filtersState) {
     : fuse(allCreatures, searchString);
 
   return baseCreatures.filter((c) => {
-    return !filtersState.currentlyActive.enabled || isCurrentlyActive(c, hemisphere)
+    return (!filtersState.currentlyActive.enabled || isCurrentlyActive(c, hemisphere))
+      && (c.type === "Bug" ? filtersState.bugs.enabled : true)
+      && (c.type === "Fish" ? filtersState.fish.enabled : true)
+
   });
 }
 
@@ -37,6 +40,8 @@ export default function App() {
   const [searchString, setSearchString] = useState("");
   const [hemisphere, setHemisphere] = useLocalStorage("hemi", "north");
   const [filtersState, setFiltersState] = useState({
+    bugs: {enabled: true, label: "Bugs"},
+    fish: {enabled: true, label: "Fish"},
     currentlyActive: {enabled: false, label: "Currently Active Only"},
   });
 
