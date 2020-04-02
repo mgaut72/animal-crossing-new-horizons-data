@@ -24,17 +24,6 @@ function fuse(searchList, searchVal) {
 }
 
 function applyAllFilters(searchString, hemisphere, filtersState, museum) {
-  const baseCreatures = searchString === "" ? allCreatures
-    : fuse(allCreatures, searchString);
-
-  return baseCreatures.filter((c) => {
-    return (!filtersState.currentlyActive.enabled || isCurrentlyActive(c, hemisphere))
-      && (!filtersState.goingAway.enabled || endsThisMonth(c, hemisphere))
-      && (!filtersState.newArrival.enabled || newThisMonth(c, hemisphere))
-      && (!filtersState.notInMuseum.enabled || !museum.has(c.name))
-      && (c.type === "Bug" ? filtersState.bugs.enabled : true)
-      && (c.type === "Fish" ? filtersState.fish.enabled : true)
-  });
 }
 
 export default function App() {
@@ -42,18 +31,34 @@ export default function App() {
   const [hemisphere, setHemisphere] = useLocalStorage("hemi", "north");
   const [museum, setMuseum] = useLocalStorageSet("museum");
   const [filtersState, setFiltersState] = useState({
-    bugs: {enabled: true, label: "Bugs"},
-    fish: {enabled: true, label: "Fish"},
-    currentlyActive: {enabled: false, label: "Currently Active Only"},
+    currentlyActive: {enabled: false, label: "Currently Active"},
     goingAway: {enabled: false, label: "Leaving This Month"},
     newArrival: {enabled: false, label: "New This Month"},
     notInMuseum: {enabled: false, label: "Not In Museum"},
   });
+  const [dataSets, setDataSets] = useState({
+    bugs: {enabled: true, label: "Bugs"},
+    fish: {enabled: true, label: "Fish"},
+  });
+
+  const filteredCreatures = () => {
+    const baseCreatures = searchString === "" ? allCreatures
+      : fuse(allCreatures, searchString);
+
+    return baseCreatures.filter((c) => {
+      return (!filtersState.currentlyActive.enabled || isCurrentlyActive(c, hemisphere))
+        && (!filtersState.goingAway.enabled || endsThisMonth(c, hemisphere))
+        && (!filtersState.newArrival.enabled || newThisMonth(c, hemisphere))
+        && (!filtersState.notInMuseum.enabled || !museum.has(c.name))
+        && (c.type === "Bug" ? dataSets.bugs.enabled : true)
+        && (c.type === "Fish" ? dataSets.fish.enabled : true)
+    });
+  };
 
   const search = _.debounce((text) => {setSearchString(text)}, 120);
   const content = (
     <CreatureGrid
-      creatures={applyAllFilters(searchString, hemisphere, filtersState, museum)}
+      creatures={filteredCreatures()}
       hemisphere={hemisphere}
       museum={museum}
       setMuseum={setMuseum}
@@ -69,6 +74,8 @@ export default function App() {
         onHemisphereChange={setHemisphere}
         filtersState={filtersState}
         setFiltersState={setFiltersState}
+        dataSets={dataSets}
+        setDataSets={setDataSets}
       />
     </div>
   );

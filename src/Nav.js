@@ -128,9 +128,27 @@ function ResponsiveDrawer(props) {
     props.setFiltersState({ ...props.filtersState, [fname]: {...props.filtersState[fname], enabled: newVal}})
   };
 
+  const handleDataSetStateChange = (e) => {
+    const fname = e.target.name;
+    const newVal = e.target.checked;
+    props.setDataSets({ ...props.dataSets, [fname]: {...props.dataSets[fname], enabled: newVal}})
+  };
+
   const drawer = (
     <div>
       <div className={classes.toolbar} />
+      <Divider />
+      <FormControl component="fieldset">
+        <FormLabel component="legend">Creature Types</FormLabel>
+        <FormGroup>
+          {Object.entries(props.dataSets).map(([k,v]) => (
+          <FormControlLabel
+            control={<Switch checked={v.enabled} onChange={handleDataSetStateChange} name={k} />}
+            label={v.label}
+          />
+          ))}
+        </FormGroup>
+      </FormControl>
       <Divider />
       <FormControl component="fieldset">
         <FormLabel component="legend">Filters</FormLabel>
