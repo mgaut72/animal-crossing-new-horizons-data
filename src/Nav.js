@@ -23,6 +23,7 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormControl from '@material-ui/core/FormControl';
 import FormLabel from '@material-ui/core/FormLabel';
 import Switch from '@material-ui/core/Switch';
+import SwipeableDrawer from '@material-ui/core/SwipeableDrawer';
 
 
 const drawerWidth = 240;
@@ -190,12 +191,13 @@ function ResponsiveDrawer(props) {
       <nav className={classes.drawer} aria-label="mailbox folders">
         {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
         <Hidden smUp implementation="css">
-          <Drawer
+          <SwipeableDrawer
             container={container}
             variant="temporary"
             anchor={theme.direction === 'rtl' ? 'right' : 'left'}
             open={mobileOpen}
-            onClose={handleDrawerToggle}
+            onClose={() => {setMobileOpen(false)}}
+            onOpen={() => {setMobileOpen(true)}}
             classes={{
               paper: classes.drawerPaper,
             }}
@@ -204,7 +206,7 @@ function ResponsiveDrawer(props) {
             }}
           >
             {drawer}
-          </Drawer>
+          </SwipeableDrawer>
         </Hidden>
         <Hidden xsDown implementation="css">
           <Drawer
