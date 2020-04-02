@@ -1,25 +1,25 @@
 {
   "files": {
     "main.css": "/animal-crossing-new-horizons-data/static/css/main.5f361e03.chunk.css",
-    "main.js": "/animal-crossing-new-horizons-data/static/js/main.5739f158.chunk.js",
-    "main.js.map": "/animal-crossing-new-horizons-data/static/js/main.5739f158.chunk.js.map",
+    "main.js": "/animal-crossing-new-horizons-data/static/js/main.d1dd2086.chunk.js",
+    "main.js.map": "/animal-crossing-new-horizons-data/static/js/main.d1dd2086.chunk.js.map",
     "runtime-main.js": "/animal-crossing-new-horizons-data/static/js/runtime-main.78508437.js",
     "runtime-main.js.map": "/animal-crossing-new-horizons-data/static/js/runtime-main.78508437.js.map",
     "static/css/2.89f067aa.chunk.css": "/animal-crossing-new-horizons-data/static/css/2.89f067aa.chunk.css",
-    "static/js/2.87e1aeeb.chunk.js": "/animal-crossing-new-horizons-data/static/js/2.87e1aeeb.chunk.js",
-    "static/js/2.87e1aeeb.chunk.js.map": "/animal-crossing-new-horizons-data/static/js/2.87e1aeeb.chunk.js.map",
+    "static/js/2.8f0f77fa.chunk.js": "/animal-crossing-new-horizons-data/static/js/2.8f0f77fa.chunk.js",
+    "static/js/2.8f0f77fa.chunk.js.map": "/animal-crossing-new-horizons-data/static/js/2.8f0f77fa.chunk.js.map",
     "index.html": "/animal-crossing-new-horizons-data/index.html",
-    "precache-manifest.cdd4a1b57cb0ea14e39b5ed8947d82f0.js": "/animal-crossing-new-horizons-data/precache-manifest.cdd4a1b57cb0ea14e39b5ed8947d82f0.js",
+    "precache-manifest.fe0bff2ee8c6ac512eea895d3cb99f03.js": "/animal-crossing-new-horizons-data/precache-manifest.fe0bff2ee8c6ac512eea895d3cb99f03.js",
     "service-worker.js": "/animal-crossing-new-horizons-data/service-worker.js",
     "static/css/2.89f067aa.chunk.css.map": "/animal-crossing-new-horizons-data/static/css/2.89f067aa.chunk.css.map",
     "static/css/main.5f361e03.chunk.css.map": "/animal-crossing-new-horizons-data/static/css/main.5f361e03.chunk.css.map",
-    "static/js/2.87e1aeeb.chunk.js.LICENSE.txt": "/animal-crossing-new-horizons-data/static/js/2.87e1aeeb.chunk.js.LICENSE.txt"
+    "static/js/2.8f0f77fa.chunk.js.LICENSE.txt": "/animal-crossing-new-horizons-data/static/js/2.8f0f77fa.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.78508437.js",
     "static/css/2.89f067aa.chunk.css",
-    "static/js/2.87e1aeeb.chunk.js",
+    "static/js/2.8f0f77fa.chunk.js",
     "static/css/main.5f361e03.chunk.css",
-    "static/js/main.5739f158.chunk.js"
+    "static/js/main.d1dd2086.chunk.js"
   ]
 }
