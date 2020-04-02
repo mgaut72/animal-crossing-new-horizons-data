@@ -59,16 +59,10 @@ export default function CreatureCard(props) {
             <Typography>{timeRangesToStr(props.creature.times)}</Typography>
           </Grid>
           <Grid item xs={4}>
-            <Typography>Active Month(s) (North)</Typography>
+            <Typography>Active Month(s)</Typography>
           </Grid>
           <Grid item xs={8}>
-            <Typography>{monthRangesToStr(props.creature.months, "north")}</Typography>
-          </Grid>
-          <Grid item xs={4}>
-            <Typography>Active Month(s) (South)</Typography>
-          </Grid>
-          <Grid item xs={8}>
-            <Typography>{monthRangesToStr(props.creature.months, "south")}</Typography>
+            <Typography>{monthRangesToStr(props.creature.months, props.hemisphere)}</Typography>
           </Grid>
         </Grid>
       </CardContent>

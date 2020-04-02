@@ -34,7 +34,10 @@ export default function CreatureGrid(props) {
         <Grid container justify="center" spacing={2}>
           {props.creatures.map((value) => (
             <Grid key={value.name} item>
-              <CreatureCard creature={value} />
+              <CreatureCard
+                creature={value}
+                hemisphere={props.hemisphere}
+              />
              </Grid>
           ))}
         </Grid>

@@ -6,6 +6,7 @@ import bugs from "./bugs.js";
 import fish from "./fish.js";
 import _ from 'lodash';
 import SettingsAndFiltersWrapper from './Nav';
+import useLocalStorage from './LocalStorage';
 
 const allCreatures = [...bugs, ...fish];
 
@@ -21,7 +22,6 @@ function fuse(searchList, searchVal) {
 }
 
 function filterAllCreatures(searchString) {
-  console.log(`search string: ${searchString}`)
   return searchString === ""
     ? allCreatures
     : fuse(allCreatures, searchString);
@@ -29,16 +29,23 @@ function filterAllCreatures(searchString) {
 
 export default function App() {
   const [searchString, setSearchString] = useState("");
+  const [hemisphere, setHemisphere] = useLocalStorage("hemi", "north");
 
   const search = _.debounce((text) => {setSearchString(text)}, 120);
-  //<Header onSearchChange={search}/>
+  const content = (
+    <CreatureGrid
+      creatures={filterAllCreatures(searchString)}
+      hemisphere={hemisphere}
+    />
+  );
 
-  const content = (<CreatureGrid creatures={filterAllCreatures(searchString)}/>);
   return (
     <div>
       <SettingsAndFiltersWrapper
         content={content}
         onSearchChange={search}
+        hemisphere={hemisphere}
+        onHemisphereChange={setHemisphere}
       />
     </div>
   );

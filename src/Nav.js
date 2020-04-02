@@ -12,12 +12,17 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import MailIcon from '@material-ui/icons/Mail';
-import MenuIcon from '@material-ui/icons/Menu';
+import TuneIcon from '@material-ui/icons/Tune';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import { fade, makeStyles, useTheme } from '@material-ui/core/styles';
 import SearchIcon from '@material-ui/icons/Search';
 import InputBase from '@material-ui/core/InputBase';
+import Radio from '@material-ui/core/Radio';
+import RadioGroup from '@material-ui/core/RadioGroup';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import FormControl from '@material-ui/core/FormControl';
+import FormLabel from '@material-ui/core/FormLabel';
 
 const drawerWidth = 240;
 
@@ -111,9 +116,21 @@ function ResponsiveDrawer(props) {
     setMobileOpen(!mobileOpen);
   };
 
+  const handleHemisphereChange = (e) => {
+    props.onHemisphereChange(e.target.value);
+  };
+
   const drawer = (
     <div>
       <div className={classes.toolbar} />
+      <Divider />
+      <FormControl component="fieldset">
+        <FormLabel component="legend">Hemisphere</FormLabel>
+        <RadioGroup aria-label="hemisphere" name="hemisphere1" value={props.hemisphere} onChange={handleHemisphereChange}>
+          <FormControlLabel value="north" control={<Radio />} label="North" />
+          <FormControlLabel value="south" control={<Radio />} label="South" />
+        </RadioGroup>
+      </FormControl>
       <Divider />
       <List>
         {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
@@ -147,7 +164,7 @@ function ResponsiveDrawer(props) {
             onClick={handleDrawerToggle}
             className={classes.menuButton}
           >
-            <MenuIcon />
+            <TuneIcon />
           </IconButton>
           <Typography className={classes.title} variant="h6" noWrap>
             New Horizons Creature Companion
