@@ -4,6 +4,7 @@ import Grid from '@material-ui/core/Grid';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
+import Switch from '@material-ui/core/Switch';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import { timeRangesToStr, monthRangesToStr } from './DateTimeUtils';
 
@@ -26,6 +27,17 @@ const useStyles = makeStyles((theme) => ({
 
 export default function CreatureCard(props) {
   const classes = useStyles();
+
+  const handleMuseumChange = (e) => {
+    let newSet = new Set(props.museum)
+    if (e.target.checked) {
+      newSet.add(e.target.name);
+    }
+    else {
+      newSet.delete(e.target.name);
+    }
+    props.setMuseum(newSet);
+  };
 
   return (
     <Card className={classes.cardRoot} variant="outlined">
@@ -63,6 +75,17 @@ export default function CreatureCard(props) {
           </Grid>
           <Grid item xs={8}>
             <Typography>{monthRangesToStr(props.creature.months, props.hemisphere)}</Typography>
+          </Grid>
+          <Grid item xs={4}>
+            <Typography>In My Museum</Typography>
+          </Grid>
+          <Grid item xs={8}>
+            <Switch
+              checked={props.museum.has(props.creature.name)}
+              onChange={handleMuseumChange}
+              name={props.creature.name}
+              inputProps={{ 'aria-label': 'in my museum toggle' }}
+            />
           </Grid>
         </Grid>
       </CardContent>

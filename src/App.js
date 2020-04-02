@@ -6,7 +6,7 @@ import bugs from "./bugs.js";
 import fish from "./fish.js";
 import _ from 'lodash';
 import SettingsAndFiltersWrapper from './Nav';
-import useLocalStorage from './LocalStorage';
+import useLocalStorage, { useLocalStorageSet } from './LocalStorage';
 import { isCurrentlyActive, endsThisMonth, newThisMonth } from './DateTimeUtils';
 
 const allCreatures = [...bugs, ...fish];
@@ -23,7 +23,7 @@ function fuse(searchList, searchVal) {
   return res.map(x => x.item);
 }
 
-function applyAllFilters(searchString, hemisphere, filtersState) {
+function applyAllFilters(searchString, hemisphere, filtersState, museum) {
   const baseCreatures = searchString === "" ? allCreatures
     : fuse(allCreatures, searchString);
 
@@ -31,6 +31,7 @@ function applyAllFilters(searchString, hemisphere, filtersState) {
     return (!filtersState.currentlyActive.enabled || isCurrentlyActive(c, hemisphere))
       && (!filtersState.goingAway.enabled || endsThisMonth(c, hemisphere))
       && (!filtersState.newArrival.enabled || newThisMonth(c, hemisphere))
+      && (!filtersState.notInMuseum.enabled || !museum.has(c.name))
       && (c.type === "Bug" ? filtersState.bugs.enabled : true)
       && (c.type === "Fish" ? filtersState.fish.enabled : true)
   });
@@ -39,19 +40,23 @@ function applyAllFilters(searchString, hemisphere, filtersState) {
 export default function App() {
   const [searchString, setSearchString] = useState("");
   const [hemisphere, setHemisphere] = useLocalStorage("hemi", "north");
+  const [museum, setMuseum] = useLocalStorageSet("museum");
   const [filtersState, setFiltersState] = useState({
     bugs: {enabled: true, label: "Bugs"},
     fish: {enabled: true, label: "Fish"},
     currentlyActive: {enabled: false, label: "Currently Active Only"},
     goingAway: {enabled: false, label: "Leaving This Month"},
     newArrival: {enabled: false, label: "New This Month"},
+    notInMuseum: {enabled: false, label: "Not In Museum"},
   });
 
   const search = _.debounce((text) => {setSearchString(text)}, 120);
   const content = (
     <CreatureGrid
-      creatures={applyAllFilters(searchString, hemisphere, filtersState)}
+      creatures={applyAllFilters(searchString, hemisphere, filtersState, museum)}
       hemisphere={hemisphere}
+      museum={museum}
+      setMuseum={setMuseum}
     />
   );
 

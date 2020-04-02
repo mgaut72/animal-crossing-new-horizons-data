@@ -37,6 +37,8 @@ export default function CreatureGrid(props) {
               <CreatureCard
                 creature={value}
                 hemisphere={props.hemisphere}
+                museum={props.museum}
+                setMuseum={props.setMuseum}
               />
              </Grid>
           ))}

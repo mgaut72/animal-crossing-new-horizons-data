@@ -36,3 +36,37 @@ export default function useLocalStorage(key, initialValue) {
 
   return [storedValue, setValue];
 }
+
+
+// Hook
+export function useLocalStorageSet(key) {
+  // State to store our value
+  // Pass initial state function to useState so logic is only executed once
+  const [storedValue, setStoredValue] = useState(() => {
+    try {
+      // Get from local storage by key
+      const item = window.localStorage.getItem(key);
+      // Parse stored json or if none return initialValue
+      return item ? new Set(JSON.parse(item)) : new Set();
+    } catch (error) {
+      // If error also return initialValue
+      console.log(error);
+      return new Set();
+    }
+  });
+
+  // Return a wrapped version of useState's setter function that ...
+  // ... persists the new value to localStorage.
+  const setValue = value => {
+    try {
+      setStoredValue(value);
+      // Save to local storage
+      window.localStorage.setItem(key, JSON.stringify([...value]));
+    } catch (error) {
+      // A more advanced implementation would handle the error case
+      console.log(error);
+    }
+  };
+
+  return [storedValue, setValue];
+}
