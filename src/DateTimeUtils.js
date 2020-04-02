@@ -79,3 +79,15 @@ function isHourActive(creature) {
 export function isCurrentlyActive(creature, hemisphere) {
   return isMonthActive(creature, hemisphere) && isHourActive(creature);
 }
+
+export function endsThisMonth(creature, hemisphere) {
+  return creature.months === "All"
+    ? false
+    : creature.months[hemisphere].some((rng) => {return rng.end === (new Date().getMonth() + 1)});
+}
+
+export function newThisMonth(creature, hemisphere) {
+  return creature.months === "All"
+    ? false
+    : creature.months[hemisphere].some((rng) => {return rng.start === (new Date().getMonth() + 1)});
+}

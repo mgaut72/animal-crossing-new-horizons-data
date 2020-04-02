@@ -7,7 +7,7 @@ import fish from "./fish.js";
 import _ from 'lodash';
 import SettingsAndFiltersWrapper from './Nav';
 import useLocalStorage from './LocalStorage';
-import { isCurrentlyActive } from './DateTimeUtils';
+import { isCurrentlyActive, endsThisMonth, newThisMonth } from './DateTimeUtils';
 
 const allCreatures = [...bugs, ...fish];
 
@@ -24,15 +24,15 @@ function fuse(searchList, searchVal) {
 }
 
 function applyAllFilters(searchString, hemisphere, filtersState) {
-  const baseCreatures = searchString === ""
-    ? allCreatures
+  const baseCreatures = searchString === "" ? allCreatures
     : fuse(allCreatures, searchString);
 
   return baseCreatures.filter((c) => {
     return (!filtersState.currentlyActive.enabled || isCurrentlyActive(c, hemisphere))
+      && (!filtersState.goingAway.enabled || endsThisMonth(c, hemisphere))
+      && (!filtersState.newArrival.enabled || newThisMonth(c, hemisphere))
       && (c.type === "Bug" ? filtersState.bugs.enabled : true)
       && (c.type === "Fish" ? filtersState.fish.enabled : true)
-
   });
 }
 
@@ -43,6 +43,8 @@ export default function App() {
     bugs: {enabled: true, label: "Bugs"},
     fish: {enabled: true, label: "Fish"},
     currentlyActive: {enabled: false, label: "Currently Active Only"},
+    goingAway: {enabled: false, label: "Leaving This Month"},
+    newArrival: {enabled: false, label: "New This Month"},
   });
 
   const search = _.debounce((text) => {setSearchString(text)}, 120);
