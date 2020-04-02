@@ -1,11 +1,11 @@
 import Fuse from "fuse.js";
 import React, { useState } from 'react';
 import CreatureGrid from './CreatureGrid';
-import Header from './Header';
 import './App.css';
 import bugs from "./bugs.js";
 import fish from "./fish.js";
 import _ from 'lodash';
+import SettingsAndFiltersWrapper from './Nav';
 
 const allCreatures = [...bugs, ...fish];
 
@@ -31,11 +31,15 @@ export default function App() {
   const [searchString, setSearchString] = useState("");
 
   const search = _.debounce((text) => {setSearchString(text)}, 120);
+  //<Header onSearchChange={search}/>
 
+  const content = (<CreatureGrid creatures={filterAllCreatures(searchString)}/>);
   return (
     <div>
-      <Header onSearchChange={search}/>
-      <CreatureGrid creatures={filterAllCreatures(searchString)}/>
+      <SettingsAndFiltersWrapper
+        content={content}
+        onSearchChange={search}
+      />
     </div>
   );
 }
