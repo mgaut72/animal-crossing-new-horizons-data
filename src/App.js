@@ -7,6 +7,7 @@ import fish from "./fish.js";
 import _ from 'lodash';
 import SettingsAndFiltersWrapper from './Nav';
 import useLocalStorage from './LocalStorage';
+import { isCurrentlyActive } from './DateTimeUtils';
 
 const allCreatures = [...bugs, ...fish];
 
@@ -15,26 +16,34 @@ function fuse(searchList, searchVal) {
     shouldSort: true,
     keys: ["name"],
     minMatchCharLength: 2,
+    threshold: 0.4,
   };
   var fuse = new Fuse(searchList, opts);
   var res = fuse.search(searchVal);
   return res.map(x => x.item);
 }
 
-function filterAllCreatures(searchString) {
-  return searchString === ""
+function applyAllFilters(searchString, hemisphere, filtersState) {
+  const baseCreatures = searchString === ""
     ? allCreatures
     : fuse(allCreatures, searchString);
+
+  return baseCreatures.filter((c) => {
+    return !filtersState.currentlyActive.enabled || isCurrentlyActive(c, hemisphere)
+  });
 }
 
 export default function App() {
   const [searchString, setSearchString] = useState("");
   const [hemisphere, setHemisphere] = useLocalStorage("hemi", "north");
+  const [filtersState, setFiltersState] = useState({
+    currentlyActive: {enabled: false, label: "Currently Active Only"},
+  });
 
   const search = _.debounce((text) => {setSearchString(text)}, 120);
   const content = (
     <CreatureGrid
-      creatures={filterAllCreatures(searchString)}
+      creatures={applyAllFilters(searchString, hemisphere, filtersState)}
       hemisphere={hemisphere}
     />
   );
@@ -46,6 +55,8 @@ export default function App() {
         onSearchChange={search}
         hemisphere={hemisphere}
         onHemisphereChange={setHemisphere}
+        filtersState={filtersState}
+        setFiltersState={setFiltersState}
       />
     </div>
   );

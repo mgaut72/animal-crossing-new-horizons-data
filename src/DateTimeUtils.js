@@ -50,3 +50,32 @@ export function monthRangesToStr(months, hemisphere) {
     return months[hemisphere].map(monthRangeToStr).join(", ");
   }
 }
+
+function isMonthActive(creature, hemisphere) {
+  if (creature.months === "All") {
+    return true;
+  }
+  const cur = new Date().getMonth() + 1;  // js is 0 indexed.  data is 1 indexed
+  const monthRanges = creature.months[hemisphere];
+  return monthRanges.some((rng) => {
+    return (rng.start <= cur && rng.end >= cur) ||
+      (rng.start <= cur && rng.start > rng.end) ||
+      (rng.start >= cur && rng.start > rng.end && rng.end >= cur)
+  });
+}
+
+function isHourActive(creature) {
+  if (creature.times === "All") {
+    return true;
+  }
+  const cur = new Date().getHours();
+  return creature.times.some((rng) => {
+    return (rng.start <= cur && rng.end > cur) ||
+      (rng.start <= cur && rng.start > rng.end) ||
+      (rng.start >= cur && rng.start > rng.end && rng.end > cur)
+  });
+}
+
+export function isCurrentlyActive(creature, hemisphere) {
+  return isMonthActive(creature, hemisphere) && isHourActive(creature);
+}
