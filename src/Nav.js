@@ -29,6 +29,9 @@ import SwipeableDrawer from '@material-ui/core/SwipeableDrawer';
 const drawerWidth = 240;
 
 const useStyles = makeStyles((theme) => ({
+  filtersFormControl: {
+    margin: theme.spacing(2),
+  },
   search: {
     position: 'relative',
     borderRadius: theme.shape.borderRadius,
@@ -87,8 +90,7 @@ const useStyles = makeStyles((theme) => ({
   },
   appBar: {
     [theme.breakpoints.up('sm')]: {
-      width: `calc(100% - ${drawerWidth}px)`,
-      marginLeft: drawerWidth,
+      zIndex: theme.zIndex.drawer + 1,
     },
   },
   menuButton: {
@@ -98,7 +100,10 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   // necessary for content to be below app bar
-  toolbar: theme.mixins.toolbar,
+  toolbar: {
+    background: theme.palette.primary.main,
+    ...theme.mixins.toolbar,
+  },
   drawerPaper: {
     width: drawerWidth,
   },
@@ -138,7 +143,7 @@ function ResponsiveDrawer(props) {
     <div>
       <div className={classes.toolbar} />
       <Divider />
-      <FormControl component="fieldset">
+      <FormControl className={classes.filtersFormControl} component="fieldset">
         <FormLabel component="legend">Creature Types</FormLabel>
         <FormGroup>
           {Object.entries(props.dataSets).map(([k,v]) => (
@@ -150,7 +155,7 @@ function ResponsiveDrawer(props) {
         </FormGroup>
       </FormControl>
       <Divider />
-      <FormControl component="fieldset">
+      <FormControl className={classes.filtersFormControl} component="fieldset">
         <FormLabel component="legend">Filters</FormLabel>
         <FormGroup>
           {Object.entries(props.filtersState).map(([k,v]) => (
@@ -162,7 +167,7 @@ function ResponsiveDrawer(props) {
         </FormGroup>
       </FormControl>
       <Divider />
-      <FormControl component="fieldset">
+      <FormControl className={classes.filtersFormControl} component="fieldset">
         <FormLabel component="legend">Hemisphere</FormLabel>
         <RadioGroup aria-label="hemisphere" name="hemisphere1" value={props.hemisphere} onChange={handleHemisphereChange}>
           <FormControlLabel value="north" control={<Radio />} label="North" />
