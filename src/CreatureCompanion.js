@@ -24,9 +24,22 @@ function fuse(searchList, searchVal) {
   return res.map(x => x.item);
 }
 
+function sortByName(arr) { return _.sortBy(arr, 'name') };
+function sortByNameReverse(arr) { return _.sortBy(arr, 'name').reverse() };
+function sortByPriceHighToLow(arr) { return _.sortBy(arr, 'price').reverse() };
+
+const sortFncs = {
+  "Name": sortByName,
+  "Name (reverse)": sortByNameReverse,
+  "Price (high to low)": sortByPriceHighToLow,
+};
+
+const sortByOptions = Object.keys(sortFncs);
+
 export default function CreatureCompanion() {
   const [searchString, setSearchString] = useState("");
   const [hemisphere, setHemisphere] = useLocalStorage("hemi", "north");
+  const [sortBy, setSortBy] = useState(sortByOptions[0]);
   const [museum, setMuseum] = useLocalStorageSet("museum");
   const [filtersState, setFiltersState] = useState({
     currentlyActive: {enabled: false, label: "Currently Active"},
@@ -39,24 +52,25 @@ export default function CreatureCompanion() {
     fish: {enabled: true, label: "Fish"},
   });
 
-  const filteredCreatures = () => {
-    const baseCreatures = searchString === "" ? allCreatures
-      : fuse(allCreatures, searchString);
 
-    return baseCreatures.filter((c) => {
+  const baseCreatures = searchString === "" ? allCreatures
+    : fuse(allCreatures, searchString);
+
+  const filteredCreatures = baseCreatures.filter((c) => {
       return (!filtersState.currentlyActive.enabled || isCurrentlyActive(c, hemisphere))
         && (!filtersState.goingAway.enabled || endsThisMonth(c, hemisphere))
         && (!filtersState.newArrival.enabled || newThisMonth(c, hemisphere))
         && (!filtersState.notInMuseum.enabled || !museum.has(c.name))
         && (c.type === "Bug" ? dataSets.bugs.enabled : true)
         && (c.type === "Fish" ? dataSets.fish.enabled : true)
-    });
-  };
+  });
+
+  const sortedCreatures = sortFncs[sortBy](filteredCreatures);
 
   const search = _.debounce((text) => {setSearchString(text)}, 120);
   const content = (
     <CreatureGrid
-      creatures={filteredCreatures()}
+      creatures={sortedCreatures}
       hemisphere={hemisphere}
       museum={museum}
       setMuseum={setMuseum}
@@ -69,9 +83,12 @@ export default function CreatureCompanion() {
         content={content}
         onSearchChange={search}
         hemisphere={hemisphere}
-        onHemisphereChange={setHemisphere}
+        setHemisphere={setHemisphere}
         filtersState={filtersState}
         setFiltersState={setFiltersState}
+        sortBy={sortBy}
+        setSortBy={setSortBy}
+        sortByOptions={sortByOptions}
         dataSets={dataSets}
         setDataSets={setDataSets}
       />

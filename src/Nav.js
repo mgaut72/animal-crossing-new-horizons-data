@@ -6,10 +6,6 @@ import Divider from '@material-ui/core/Divider';
 import Drawer from '@material-ui/core/Drawer';
 import Hidden from '@material-ui/core/Hidden';
 import IconButton from '@material-ui/core/IconButton';
-import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
-import ListItemText from '@material-ui/core/ListItemText';
 import TuneIcon from '@material-ui/icons/Tune';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
@@ -124,8 +120,12 @@ function ResponsiveDrawer(props) {
   };
 
   const handleHemisphereChange = (e) => {
-    props.onHemisphereChange(e.target.value);
+    props.setHemisphere(e.target.value);
   };
+
+  const handleSortByChange = (e) => {
+    props.setSortBy(e.target.value);
+  }
 
   const handleFilterStateChange = (e) => {
     const fname = e.target.name;
@@ -159,12 +159,21 @@ function ResponsiveDrawer(props) {
         <FormLabel component="legend">Filters</FormLabel>
         <FormGroup>
           {Object.entries(props.filtersState).map(([k,v]) => (
-          <FormControlLabel
-            control={<Switch checked={v.enabled} onChange={handleFilterStateChange} name={k} />}
-            label={v.label}
-          />
+            <FormControlLabel
+              control={<Switch checked={v.enabled} onChange={handleFilterStateChange} name={k} />}
+              label={v.label}
+            />
           ))}
         </FormGroup>
+      </FormControl>
+      <Divider />
+      <FormControl className={classes.filtersFormControl} component="fieldset">
+        <FormLabel component="legend">Sort</FormLabel>
+        <RadioGroup aria-label="sort by" name="sortby1" value={props.sortBy} onChange={handleSortByChange}>
+          {props.sortByOptions.map(option => (
+            <FormControlLabel value={option} control={<Radio />} label={option} />
+          ))}
+        </RadioGroup>
       </FormControl>
       <Divider />
       <FormControl className={classes.filtersFormControl} component="fieldset">
