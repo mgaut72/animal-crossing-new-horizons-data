@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "d9074e31223a85be44cd0a23353ea721",
+    "revision": "d3d77bf11018406c1bc8edc82fab61d1",
     "url": "/animal-crossing-new-horizons-data/index.html"
   },
   {
-    "revision": "3b098be8b22dca88c9b1",
+    "revision": "7cbe5146995943027409",
     "url": "/animal-crossing-new-horizons-data/static/css/2.89f067aa.chunk.css"
   },
   {
-    "revision": "d2c1d0ea120c461638cb",
+    "revision": "720bead83db24f3c234f",
     "url": "/animal-crossing-new-horizons-data/static/css/main.5f361e03.chunk.css"
   },
   {
-    "revision": "3b098be8b22dca88c9b1",
-    "url": "/animal-crossing-new-horizons-data/static/js/2.8f0f77fa.chunk.js"
+    "revision": "7cbe5146995943027409",
+    "url": "/animal-crossing-new-horizons-data/static/js/2.be6c0735.chunk.js"
   },
   {
     "revision": "68ba00d5eb083746d913686923a3d904",
-    "url": "/animal-crossing-new-horizons-data/static/js/2.8f0f77fa.chunk.js.LICENSE.txt"
+    "url": "/animal-crossing-new-horizons-data/static/js/2.be6c0735.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "d2c1d0ea120c461638cb",
-    "url": "/animal-crossing-new-horizons-data/static/js/main.d1dd2086.chunk.js"
+    "revision": "720bead83db24f3c234f",
+    "url": "/animal-crossing-new-horizons-data/static/js/main.b6621d7e.chunk.js"
   },
   {
     "revision": "580889e70868adf0ee83",
