@@ -5,10 +5,10 @@
 {"name":"Common Bluebottle","location":"Flying","price":300,"times":[{"start":4,"end":19}],"months":{"north":[{"start":4,"end":8}],"south":[{"start":10,"end":2}]},"type":"Bug"}
 {"name":"Paper Kite Butterfly","location":"Flying","price":1000,"times":[{"start":8,"end":19}],"months":"All","type":"Bug"}
 {"name":"Great Purple Emperor","location":"Flying","price":3000,"times":[{"start":4,"end":19}],"months":{"north":[{"start":5,"end":8}],"south":[{"start":11,"end":2}]},"type":"Bug"}
-{"name":"Monach Butterfly","location":"Flying","price":140,"times":[{"start":4,"end":17}],"months":{"north":[{"start":9,"end":11}],"south":[{"start":3,"end":5}]},"type":"Bug"}
+{"name":"Monarch Butterfly","location":"Flying","price":140,"times":[{"start":4,"end":17}],"months":{"north":[{"start":9,"end":11}],"south":[{"start":3,"end":5}]},"type":"Bug"}
 {"name":"Emperor Butterfly","location":"Flying","price":4000,"times":[{"start":17,"end":8}],"months":{"north":[{"start":6,"end":9},{"start":12,"end":3}],"south":[{"start":12,"end":3},{"start":6,"end":9}]},"type":"Bug"}
 {"name":"Agrias Butterfly","location":"Flying","price":3000,"times":[{"start":8,"end":17}],"months":{"north":[{"start":4,"end":9}],"south":[{"start":11,"end":3}]},"type":"Bug"}
-{"name":"Raja Brooke's Birdwing","location":"Flying","price":2500,"times":[{"start":8,"end":17}],"months":{"north":[{"start":4,"end":9},{"start":12,"end":2}],"south":[{"start":11,"end":3},{"start":6,"end":8}]},"type":"Bug"}
+{"name":"Rajah Brooke's Birdwing","location":"Flying","price":2500,"times":[{"start":8,"end":17}],"months":{"north":[{"start":4,"end":9},{"start":12,"end":2}],"south":[{"start":11,"end":3},{"start":6,"end":8}]},"type":"Bug"}
 {"name":"Queen Alexandra's Birdwing","location":"Flying","price":4000,"times":[{"start":8,"end":16}],"months":{"north":[{"start":5,"end":9}],"south":[{"start":11,"end":3}]},"type":"Bug"}
 {"name":"Moth","location":"Flying by light","price":130,"times":[{"start":19,"end":4}],"months":"All","type":"Bug"}
 {"name":"Atlas Moth","location":"On trees","price":3000,"times":[{"start":19,"end":4}],"months":{"north":[{"start":4,"end":9}],"south":[{"start":10,"end":3}]},"type":"Bug"}

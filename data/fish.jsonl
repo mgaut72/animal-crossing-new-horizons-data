@@ -42,7 +42,7 @@
 {"name":"Dorado","price":15000,"location":"River","times":[{"start":4,"end":21}],"months":{"north":[{"start":6,"end":9}],"south":[{"start":12,"end":3}]},"type":"Fish"}
 {"name":"Gar","price":6000,"location":"Pond","times":[{"start":16,"end":9}],"months":{"north":[{"start":6,"end":9}],"south":[{"start":12,"end":3}]},"type":"Fish"}
 {"name":"Arapaima","price":10000,"location":"River","times":[{"start":16,"end":9}],"months":{"north":[{"start":6,"end":9}],"south":[{"start":12,"end":3}]},"type":"Fish"}
-{"name":"Saddled Birchir","price":4000,"location":"River","times":[{"start":21,"end":4}],"months":{"north":[{"start":6,"end":9}],"south":[{"start":12,"end":3}]},"type":"Fish"}
+{"name":"Saddled Bichir","price":4000,"location":"River","times":[{"start":21,"end":4}],"months":{"north":[{"start":6,"end":9}],"south":[{"start":12,"end":3}]},"type":"Fish"}
 {"name":"Sturgeon","price":10000,"location":"River mouth","times":"All","months":{"north":[{"start":9,"end":3}],"south":[{"start":3,"end":9}]},"type":"Fish"}
 {"name":"Sea Butterfly","price":1000,"location":"Sea","times":"All","months":{"north":[{"start":12,"end":3}],"south":[{"start":6,"end":9}]},"type":"Fish"}
 {"name":"Seahorse","price":1100,"location":"Sea","times":"All","months":{"north":[{"start":4,"end":11}],"south":[{"start":10,"end":5}]},"type":"Fish"}
