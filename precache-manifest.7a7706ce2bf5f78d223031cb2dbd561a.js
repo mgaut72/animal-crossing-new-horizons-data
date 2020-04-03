@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "5f485d902a24daf5d9dc321d392bb9f9",
+    "revision": "f83f7e1c910ee9aff2f74b9ebac944b4",
     "url": "/animal-crossing-new-horizons-data/index.html"
   },
   {
