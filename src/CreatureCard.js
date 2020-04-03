@@ -3,10 +3,14 @@ import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
+import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
 import Switch from '@material-ui/core/Switch';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import { timeRangesToStr, monthRangesToStr } from './DateTimeUtils';
+import getIconForCreatureName from './CreatureIcons';
+import Avatar from '@material-ui/core/Avatar';
+
 
 const useStyles = makeStyles((theme) => ({
   cardRoot: {
@@ -22,6 +26,8 @@ const useStyles = makeStyles((theme) => ({
   },
   pos: {
     marginBottom: 12,
+  },
+  media: {
   },
 }));
 
@@ -42,13 +48,25 @@ export default function CreatureCard(props) {
   return (
     <Card className={classes.cardRoot} variant="outlined">
       <CardContent>
-        <Typography gutterBottom variant="h5" component="h2">
-          {props.creature.name}
-        </Typography>
-        <Typography className={classes.pos} color="textSecondary">
-          {props.creature.type}
-        </Typography>
         <Grid container alignItems="center">
+          <Grid item xs={4}>
+            <CardMedia
+              component="img"
+              className={classes.media}
+              image={getIconForCreatureName(props.creature.name)}
+              title={props.creature.name + " icon"}
+            />
+          </Grid>
+          <Grid item xs={8}>
+            <Typography gutterBottom variant="h5" component="h2">
+              {props.creature.name}
+            </Typography>
+          </Grid>
+          <Grid item xs={12}>
+            <Typography className={classes.pos} color="textSecondary">
+              {props.creature.type}
+            </Typography>
+          </Grid>
           <Grid item xs={4}>
             <Typography>Price</Typography>
           </Grid>
