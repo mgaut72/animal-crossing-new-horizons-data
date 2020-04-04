@@ -13,11 +13,11 @@ export default createMuiTheme({
       white: "#F5F2DC",
     },
     primary: {
-      main: blue[400],
+      main: blue[600],
       contrastText: darkBrown,
     },
     secondary: {
-      main: green[400],
+      main: green[500],
       contrastText: darkBrown,
     },
     text: {
