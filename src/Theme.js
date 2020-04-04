@@ -5,7 +5,13 @@ import green from '@material-ui/core/colors/green';
 const darkBrown = '#6b3600'
 
 export default createMuiTheme({
+  typography: {
+    fontSize: 12,
+  },
   palette: {
+    common: {
+      white: "#F5F2DC",
+    },
     primary: {
       main: blue[400],
       contrastText: darkBrown,
@@ -18,8 +24,8 @@ export default createMuiTheme({
       primary: darkBrown,
     },
     background: {
-      paper: "#d7ccc8",
-      default: "#efebe9",
+      paper: "#E8DAb6",
+      default: "#733c00",
     },
   },
 });
