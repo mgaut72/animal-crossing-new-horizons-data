@@ -8,8 +8,7 @@ import Typography from '@material-ui/core/Typography';
 import Switch from '@material-ui/core/Switch';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import { timeRangesToStr, monthRangesToStr } from './DateTimeUtils';
-import getIconForCreatureName from './CreatureIcons';
-import Avatar from '@material-ui/core/Avatar';
+import getIconForCritterName from './CritterIcons';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -19,11 +18,6 @@ const useStyles = makeStyles((theme) => ({
     display: 'block',
     width: '30vw',
   },
-  bullet: {
-    display: 'inline-block',
-    margin: '0 2px',
-    transform: 'scale(0.8)',
-  },
   pos: {
     marginBottom: 12,
   },
@@ -31,7 +25,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function CreatureCard(props) {
+export default function CritterCard(props) {
   const classes = useStyles();
 
   const handleMuseumChange = (e) => {
@@ -53,18 +47,18 @@ export default function CreatureCard(props) {
             <CardMedia
               component="img"
               className={classes.media}
-              image={getIconForCreatureName(props.creature.name)}
-              title={props.creature.name + " icon"}
+              image={getIconForCritterName(props.critter.name)}
+              title={props.critter.name + " icon"}
             />
           </Grid>
           <Grid item xs={8}>
             <Typography gutterBottom variant="h5" component="h2">
-              {props.creature.name}
+              {props.critter.name}
             </Typography>
           </Grid>
           <Grid item xs={12}>
             <Typography className={classes.pos} color="textSecondary">
-              {props.creature.type}
+              {props.critter.type}
             </Typography>
           </Grid>
           <Grid item xs={4}>
@@ -74,34 +68,34 @@ export default function CreatureCard(props) {
             <NotificationsIcon/>
           </Grid>
           <Grid item xs={7}>
-            <Typography>{props.creature.price.toLocaleString(navigator.language, {minimumFractionDigits: 0})}</Typography>
+            <Typography>{props.critter.price.toLocaleString(navigator.language, {minimumFractionDigits: 0})}</Typography>
           </Grid>
           <Grid item xs={4}>
             <Typography>Location</Typography>
           </Grid>
           <Grid item xs={8}>
-            <Typography>{props.creature.location}</Typography>
+            <Typography>{props.critter.location}</Typography>
           </Grid>
           <Grid item xs={4}>
             <Typography>Active Time(s)</Typography>
           </Grid>
           <Grid item xs={8}>
-            <Typography>{timeRangesToStr(props.creature.times)}</Typography>
+            <Typography>{timeRangesToStr(props.critter.times)}</Typography>
           </Grid>
           <Grid item xs={4}>
             <Typography>Active Month(s)</Typography>
           </Grid>
           <Grid item xs={8}>
-            <Typography>{monthRangesToStr(props.creature.months, props.hemisphere)}</Typography>
+            <Typography>{monthRangesToStr(props.critter.months, props.hemisphere)}</Typography>
           </Grid>
           <Grid item xs={4}>
             <Typography>In My Museum</Typography>
           </Grid>
           <Grid item xs={8}>
             <Switch
-              checked={props.museum.has(props.creature.name)}
+              checked={props.museum.has(props.critter.name)}
               onChange={handleMuseumChange}
-              name={props.creature.name}
+              name={props.critter.name}
               inputProps={{ 'aria-label': 'in my museum toggle' }}
             />
           </Grid>

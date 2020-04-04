@@ -144,7 +144,7 @@ function ResponsiveDrawer(props) {
       <div className={classes.toolbar} />
       <Divider />
       <FormControl className={classes.filtersFormControl} component="fieldset">
-        <FormLabel component="legend">Creature Types</FormLabel>
+        <FormLabel component="legend">Critter Types</FormLabel>
         <FormGroup>
           {Object.entries(props.dataSets).map(([k,v]) => (
           <FormControlLabel
@@ -202,7 +202,7 @@ function ResponsiveDrawer(props) {
             <TuneIcon />
           </IconButton>
           <Typography className={classes.title} variant="h6" noWrap>
-            New Horizons Creature Companion
+            New Horizons Critter Companion
           </Typography>
           <div className={classes.search}>
             <div className={classes.searchIcon}>

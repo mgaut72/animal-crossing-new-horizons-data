@@ -1,7 +1,7 @@
 
 import Fuse from "fuse.js";
 import React, { useState } from 'react';
-import CreatureGrid from './CreatureGrid';
+import CritterGrid from './CritterGrid';
 import './App.css';
 import bugs from "./bugs.js";
 import fish from "./fish.js";
@@ -10,7 +10,7 @@ import SettingsAndFiltersWrapper from './Nav';
 import useLocalStorage, { useLocalStorageSet } from './LocalStorage';
 import { isCurrentlyActive, endsThisMonth, newThisMonth } from './DateTimeUtils';
 
-const allCreatures = [...bugs, ...fish];
+const allCritters = [...bugs, ...fish];
 
 function fuse(searchList, searchVal) {
   var opts = {
@@ -36,7 +36,7 @@ const sortFncs = {
 
 const sortByOptions = Object.keys(sortFncs);
 
-export default function CreatureCompanion() {
+export default function CritterCompanion() {
   const [searchString, setSearchString] = useState("");
   const [hemisphere, setHemisphere] = useLocalStorage("hemi", "north");
   const [sortBy, setSortBy] = useState(sortByOptions[0]);
@@ -53,10 +53,10 @@ export default function CreatureCompanion() {
   });
 
 
-  const baseCreatures = searchString === "" ? allCreatures
-    : fuse(allCreatures, searchString);
+  const baseCritters = searchString === "" ? allCritters
+    : fuse(allCritters, searchString);
 
-  const filteredCreatures = baseCreatures.filter((c) => {
+  const filteredCritters = baseCritters.filter((c) => {
       return (!filtersState.currentlyActive.enabled || isCurrentlyActive(c, hemisphere))
         && (!filtersState.goingAway.enabled || endsThisMonth(c, hemisphere))
         && (!filtersState.newArrival.enabled || newThisMonth(c, hemisphere))
@@ -65,12 +65,12 @@ export default function CreatureCompanion() {
         && (c.type === "Fish" ? dataSets.fish.enabled : true)
   });
 
-  const sortedCreatures = sortFncs[sortBy](filteredCreatures);
+  const sortedCritters = sortFncs[sortBy](filteredCritters);
 
   const search = _.debounce((text) => {setSearchString(text)}, 120);
   const content = (
-    <CreatureGrid
-      creatures={sortedCreatures}
+    <CritterGrid
+      critters={sortedCritters}
       hemisphere={hemisphere}
       museum={museum}
       setMuseum={setMuseum}

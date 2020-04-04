@@ -1,7 +1,7 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
-import CreatureCard from './CreatureCard'
+import CritterCard from './CritterCard'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -25,17 +25,17 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function CreatureGrid(props) {
+export default function CritterGrid(props) {
   const classes = useStyles();
 
   return (
     <Grid container className={classes.root} spacing={2}>
       <Grid item xs={12}>
-        <Grid container justify="center" spacing={2}>
-          {props.creatures.map((value) => (
+        <Grid container justify="center" spacing={6}>
+          {props.critters.map((value) => (
             <Grid key={value.name} item>
-              <CreatureCard
-                creature={value}
+              <CritterCard
+                critter={value}
                 hemisphere={props.hemisphere}
                 museum={props.museum}
                 setMuseum={props.setMuseum}
