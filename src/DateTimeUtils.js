@@ -21,18 +21,19 @@ export function timeRangesToStr(times) {
 
 export function monthToStr(month) {
   switch (month) {
-    case 1: return "Jan"
-    case 2: return "Feb"
-    case 3: return "Mar"
-    case 4: return "Apr"
+    case 1: return "Jan."
+    case 2: return "Feb."
+    case 3: return "Mar."
+    case 4: return "Apr."
     case 5: return "May"
-    case 6: return "Jun"
+    case 6: return "June"
     case 7: return "July"
-    case 8: return "Aug"
-    case 9: return "Sept"
-    case 10: return "Oct"
-    case 11: return "Nov"
-    case 12: return "Dec"
+    case 8: return "Aug."
+    case 9: return "Sept."
+    case 10: return "Oct."
+    case 11: return "Nov."
+    case 12: return "Dec."
+    default: return "???"
   }
 }
 
@@ -51,17 +52,16 @@ export function monthRangesToStr(months, hemisphere) {
   }
 }
 
-function isMonthActive(creature, hemisphere) {
-  if (creature.months === "All") {
-    return true;
-  }
-  const cur = new Date().getMonth() + 1;  // js is 0 indexed.  data is 1 indexed
-  const monthRanges = creature.months[hemisphere];
-  return monthRanges.some((rng) => {
-    return (rng.start <= cur && rng.end >= cur) ||
-      (rng.start <= cur && rng.start > rng.end) ||
-      (rng.start >= cur && rng.start > rng.end && rng.end >= cur)
-  });
+export function isCurrentMonthActive(creature, hemisphere) {
+  return isMonthActive(new Date().getMonth() + 1, creature, hemisphere);
+}
+
+function isMonthActive(month, creature, hemisphere) {
+  return creature.activeMonths[hemisphere].includes(month)
+}
+
+export function getActiveMonths(creature, hemisphere) {
+  return allMonths.filter(m => isMonthActive(m, creature, hemisphere)); 
 }
 
 function isHourActive(creature) {
@@ -77,7 +77,7 @@ function isHourActive(creature) {
 }
 
 export function isCurrentlyActive(creature, hemisphere) {
-  return isMonthActive(creature, hemisphere) && isHourActive(creature);
+  return isCurrentMonthActive(creature, hemisphere) && isHourActive(creature);
 }
 
 export function endsThisMonth(creature, hemisphere) {
@@ -91,3 +91,7 @@ export function newThisMonth(creature, hemisphere) {
     ? false
     : creature.months[hemisphere].some((rng) => {return rng.start === (new Date().getMonth() + 1)});
 }
+
+export const allMonths  = [...Array(12).keys()].map(x => x +1);
+
+export default allMonths;
