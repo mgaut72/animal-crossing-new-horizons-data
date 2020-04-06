@@ -1,5 +1,6 @@
 import React from 'react';
 import { useTheme, makeStyles } from '@material-ui/core/styles';
+import clsx from 'clsx';
 import Grid from '@material-ui/core/Grid';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
@@ -48,10 +49,16 @@ const useStyles = makeStyles((theme) => ({
   detailsGrid: {
     height: '100%',
     width: '100%',
+    marginTop: 5,
+    marginBottom: 5,
   },
-  detailsGridItem: {
+  fullSize: {
     height: '100%',
     width: '100%',
+  },
+  detailsGridItem: {
+    marginTop: 5,
+    marginBottom: 5,
   },
   critterType: {
     height: '20',
@@ -114,19 +121,19 @@ export default function CritterCard(props) {
 
   const details = (
     <>
-      <Grid item xs={12} className={classes.detailsGridItem}>
+      <Grid item xs={12} className={clsx(classes.detailsGridItem, classes.fullSize)}>
         <Price critter={props.critter} />
       </Grid>
-      <Grid item xs={12} className={classes.detailsGridItem}>
+      <Grid item xs={12} className={clsx(classes.detailsGridItem, classes.fullSize)}>
         <Location critter={props.critter} />
       </Grid>
-      <Grid item xs={12}>
+      <Grid item xs={12} className={clsx(classes.detailsGridItem)}>
         <ActiveHours
           critter={props.critter}
           hemisphere={props.hemisphere}
         />
       </Grid>
-      <Grid item xs={12}>
+      <Grid item xs={12} className={clsx(classes.detailsGridItem)}>
         <ActiveMonths
           critter={props.critter}
           hemisphere={props.hemisphere}

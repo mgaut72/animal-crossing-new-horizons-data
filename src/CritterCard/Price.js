@@ -9,7 +9,7 @@ export default function Location(props) {
       <Grid item xs={6}>
         <Typography>Price</Typography>
       </Grid>
-      <Grid item xs={1}>
+      <Grid item xs={2}>
         <NotificationsIcon/>
       </Grid>
       <Grid item xs={4}>

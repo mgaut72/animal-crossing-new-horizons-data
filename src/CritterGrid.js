@@ -14,9 +14,7 @@ export default function CritterGrid(props) {
   const classes = useStyles();
 
   return (
-    <Grid container className={classes.critterGridRoot} spacing={2}>
-      <Grid item xs={12}>
-        <Grid container justify="center" spacing={6}>
+    <Grid container className={classes.critterGridRoot} spacing={6} justify="center">
           {props.critters.map((value) => (
             <Grid key={value.name} item>
               <CritterCard
@@ -27,8 +25,6 @@ export default function CritterGrid(props) {
               />
              </Grid>
           ))}
-        </Grid>
-      </Grid>
     </Grid>
   );
 }
