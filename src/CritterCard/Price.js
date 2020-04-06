@@ -9,11 +9,11 @@ export default function Location(props) {
       <Grid item xs={6}>
         <Typography>Price</Typography>
       </Grid>
-      <Grid item xs={2}>
-        <NotificationsIcon/>
-      </Grid>
-      <Grid item xs={4}>
-        <Typography>{props.critter.price.toLocaleString(navigator.language, {minimumFractionDigits: 0})}</Typography>
+      <Grid item xs={6}>
+        <Typography>
+          <NotificationsIcon/>
+          {props.critter.price.toLocaleString(navigator.language, {minimumFractionDigits: 0})}
+        </Typography>
       </Grid>
     </Grid>
   );
