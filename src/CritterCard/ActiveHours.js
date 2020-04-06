@@ -16,18 +16,18 @@ const useStyles = makeStyles((theme) => ({
   },
   baseHourGridContainer: {
     width: "100%",
-    borderBottom: `3px double ${theme.palette.divider}`,
+    borderBottom: `3px double ${theme.palette.text.secondary}`,
     //borderRadius: theme.shape.borderRadius,
     //color: theme.palette.text.secondary,
   },
   leftTick: {
-    borderLeft: `1px solid ${theme.palette.divider}`,
+    borderLeft: `1px solid ${theme.palette.text.secondary}`,
   },
   noTick: {
     paddingLeft: "1px",
   },
   rightTick: {
-    borderRight: `1px solid ${theme.palette.divider}`,
+    borderRight: `1px solid ${theme.palette.text.secondary}`,
   },
   hourSlot: {
     paddingLeft: 1,
@@ -57,7 +57,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   activeActiveHour: {
-    backgroundColor: "#BFC90C",
+    backgroundColor: theme.palette.secondary.main,
   },
   inactiveActiveHour: {
     backgroundColor: theme.palette.divider,
@@ -84,7 +84,7 @@ export default function ActiveMonths(props) {
   } else {
     currDisplay = "  |"
   }
-    
+
   const isCurrMonthActive = isCurrentMonthActive(props.critter, props.hemisphere)
 
   return (
@@ -137,7 +137,7 @@ export default function ActiveMonths(props) {
             className={clsx(classes.hourSlot)}
             align="center"
           >
-            {" | "}
+            {currDisplay}
           </Typography>
         </Grid>
       ))}
@@ -155,7 +155,25 @@ export default function ActiveMonths(props) {
             className={clsx(classes.hourSlot)}
             align="center"
           >
-            {" | "}
+            {currDisplay}
+          </Typography>
+        </Grid>
+      ))}
+    </Grid>
+    <Grid container alignItems="center" direction="row" spacing={theme.spacing(0.3)}>
+      {[...Array(24).keys()].map(hourNum => (
+        <Grid
+          alignItems="center"
+          xs={0.5}
+          justify="center"
+          className={clsx(classes.leftTick, hourNum === 23 && classes.rightTick)}
+          noWrap
+        >
+          <Typography
+            className={clsx(classes.hourSlot, hourNum === currHour && classes.currentHour)}
+            align="center"
+          >
+            {currDisplay}
           </Typography>
         </Grid>
       ))}

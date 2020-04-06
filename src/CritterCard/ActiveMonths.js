@@ -25,12 +25,12 @@ const useStyles = makeStyles((theme) => ({
     paddingLeft: theme.spacing(2),
   },
   monthGridContainer: {
-    border: `1px solid ${theme.palette.divider}`,
+    border: `1px solid ${theme.palette.text.secondary}`,
     borderRadius: theme.shape.borderRadius,
     //color: theme.palette.text.secondary,
   },
   monthGridItem: {
-    border: `1px solid ${theme.palette.divider}`,
+    border: `1px solid ${theme.palette.text.secondary}`,
     //borderRadius: theme.shape.borderRadius,
     //color: theme.palette.text.secondary,
     //padding: theme.spacing(0.1),
@@ -50,7 +50,7 @@ const useStyles = makeStyles((theme) => ({
   activeMonth: {
     fontWeight: "bold",
     color: theme.palette.text.primary,
-    backgroundColor: "#BFC90C",
+    backgroundColor: theme.palette.secondary.main,
     borderRadius: "35%",
   },
 }));
