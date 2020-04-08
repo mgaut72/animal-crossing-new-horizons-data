@@ -24,11 +24,13 @@ function fuse(searchList, searchVal) {
   return res.map(x => x.item);
 }
 
+function sortByNone(arr) { return arr };
 function sortByName(arr) { return _.sortBy(arr, 'name') };
 function sortByNameReverse(arr) { return _.sortBy(arr, 'name').reverse() };
 function sortByPriceHighToLow(arr) { return _.sortBy(arr, 'price').reverse() };
 
 const sortFncs = {
+  "None": sortByNone,
   "Name": sortByName,
   "Name (reverse)": sortByNameReverse,
   "Price (high to low)": sortByPriceHighToLow,
