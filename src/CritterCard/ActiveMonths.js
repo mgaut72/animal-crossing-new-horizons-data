@@ -3,7 +3,7 @@ import clsx from 'clsx';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
-import { allMonths, getActiveMonths, monthToStr } from '../DateTimeUtils';
+import { isCurrentlyActive, allMonths, getActiveMonths, monthToStr } from '../DateTimeUtils';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -47,11 +47,17 @@ const useStyles = makeStyles((theme) => ({
     },
     color: theme.palette.text.secondary,
   },
-  activeMonth: {
+  activeActive: {
     fontWeight: "bold",
     color: theme.palette.text.primary,
-    backgroundColor: theme.palette.secondary.main,
     borderRadius: "35%",
+    backgroundColor: theme.palette.secondary.main,
+  },
+  activeInactive: {
+    fontWeight: "bold",
+    color: theme.palette.text.primary,
+    borderRadius: "35%",
+    backgroundColor: theme.palette.divider,
   },
 }));
 
@@ -62,6 +68,15 @@ export default function ActiveMonths(props) {
 
   const activeMonths = getActiveMonths(props.critter, props.hemisphere)
   const currMonth = new Date().getMonth() + 1;
+  const isActive = isCurrentlyActive(props.critter, props.hemisphere);
+
+  const getClass = (month) => {
+    if (activeMonths.includes(month)) {
+      return isActive ? classes.activeActive : classes.activeInactive;
+    } else {
+      return false;
+    }
+  }
 
   return (
     <>
@@ -75,7 +90,7 @@ export default function ActiveMonths(props) {
           className={monthNum === currMonth ? classes.currentMonthGridItem : classes.monthGridItem}
         >
           <Typography
-            className={clsx(classes.monthTypography, activeMonths.includes(monthNum) && classes.activeMonth)}
+            className={clsx(classes.monthTypography, getClass(monthNum))}
             align="center"
           >
             {monthToStr(monthNum)}

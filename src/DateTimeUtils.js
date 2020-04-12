@@ -8,6 +8,9 @@ export function timeRangeToStr(time) {
   return `${hourToStr(time.start)} - ${hourToStr(time.end)}`
 }
 
+export function isAllTimes(times) {
+}
+
 export function timeRangesToStr(times) {
   if (typeof times === 'string' || times instanceof String) {
     if (! times) {
@@ -64,7 +67,7 @@ export function getActiveMonths(creature, hemisphere) {
   return allMonths.filter(m => isMonthActive(m, creature, hemisphere)); 
 }
 
-function isHourActive(creature) {
+export function isHourActive(creature) {
   if (creature.times === "All") {
     return true;
   }
