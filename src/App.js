@@ -1,7 +1,7 @@
 import React from 'react';
 import { MuiThemeProvider } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import Critterpedia from './Critterpedia';
+import NookPhone from './AppFrame';
 import theme from './Theme'
 
 export default function App() {
@@ -9,7 +9,7 @@ export default function App() {
     <div>
       <MuiThemeProvider theme={theme}>
         <CssBaseline />
-        <Critterpedia />
+        <NookPhone />
       </MuiThemeProvider>
     </div>
   );

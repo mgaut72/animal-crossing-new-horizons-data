@@ -1,14 +1,13 @@
 
 import Fuse from "fuse.js";
 import React, { useState } from 'react';
-import CritterGrid from './CritterGrid';
+import CritterGrid from './Critterpedia/CritterGrid';
 import './App.css';
-import bugs from "./bugs.js";
-import fish from "./fish.js";
+import bugs from "./Critterpedia/bugs.js";
+import fish from "./Critterpedia/fish.js";
 import _ from 'lodash';
-import SettingsAndFiltersWrapper from './Nav';
 import useLocalStorage, { useLocalStorageSet } from './LocalStorage';
-import { isCurrentlyActive, endsThisMonth, newThisMonth } from './DateTimeUtils';
+import { isCurrentlyActive, endsThisMonth, newThisMonth } from './Critterpedia/DateTimeUtils';
 
 const allCritters = [...bugs, ...fish];
 
@@ -70,30 +69,13 @@ export default function CritterCompanion() {
   const sortedCritters = sortFncs[sortBy](filteredCritters);
 
   const search = _.debounce((text) => {setSearchString(text)}, 120);
-  const content = (
+
+  return (
     <CritterGrid
       critters={sortedCritters}
       hemisphere={hemisphere}
       museum={museum}
       setMuseum={setMuseum}
     />
-  );
-
-  return (
-    <div>
-      <SettingsAndFiltersWrapper
-        content={content}
-        onSearchChange={search}
-        hemisphere={hemisphere}
-        setHemisphere={setHemisphere}
-        filtersState={filtersState}
-        setFiltersState={setFiltersState}
-        sortBy={sortBy}
-        setSortBy={setSortBy}
-        sortByOptions={sortByOptions}
-        dataSets={dataSets}
-        setDataSets={setDataSets}
-      />
-    </div>
   );
 }
