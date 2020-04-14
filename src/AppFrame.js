@@ -1,12 +1,8 @@
 import React from 'react';
-import AppBar from '@material-ui/core/AppBar';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Divider from '@material-ui/core/Divider';
 import Drawer from '@material-ui/core/Drawer';
 import Hidden from '@material-ui/core/Hidden';
-import IconButton from '@material-ui/core/IconButton';
-import TuneIcon from '@material-ui/icons/Tune';
-import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import SearchIcon from '@material-ui/icons/Search';
@@ -30,18 +26,8 @@ import {
 
 const drawerWidth = 240;
 
+
 const useStyles = makeStyles((theme) => ({
-  inputRoot: {
-    color: 'inherit',
-  },
-  title: {
-    flexGrow: 1,
-    display: 'none',
-    [theme.breakpoints.up('sm')]: {
-      display: 'block',
-    },
-  },
-  offset: theme.mixins.toolbar,
   root: {
     display: 'flex',
   },
@@ -51,21 +37,15 @@ const useStyles = makeStyles((theme) => ({
       flexShrink: 0,
     },
   },
-  appBar: {
-    [theme.breakpoints.up('sm')]: {
-      zIndex: theme.zIndex.drawer + 1,
-    },
-  },
-  menuButton: {
-    marginRight: theme.spacing(2),
-    [theme.breakpoints.up('sm')]: {
-      display: 'none',
-    },
-  },
   // necessary for content to be below app bar
-  toolbar: {
-    background: theme.palette.primary.main,
+  drawerToolbar: {
     ...theme.mixins.toolbar,
+    //paddingLeft: theme.spacing(3),
+    display: 'flex',
+    flexGrow: 1,
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   drawerPaper: {
     width: drawerWidth,
@@ -74,13 +54,21 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
     padding: theme.spacing(3),
   },
+  drawerTitle: {
+    color: theme.palette.text.secondary,
+    '&:hover': {
+      color: theme.palette.primary.main,
+    },
+  },
 }));
 
+
+
 function ListItemLink(props) {
-  const { icon, primary, to } = props;
+  const { icon, primary, to, onClick } = props;
 
   const renderLink = React.useMemo(
-    () => React.forwardRef((itemProps, ref) => <RouterLink to={to} ref={ref} {...itemProps} />),
+    () => React.forwardRef((itemProps, ref) => <RouterLink to={to} ref={ref} onClick={onClick}{...itemProps} />),
     [to],
   );
 
@@ -106,37 +94,25 @@ export default function ResponsiveDrawer(props) {
   };
 
   const drawer = (
-    <>
-    <div className={classes.toolbar} />
-    <Divider />
-    <List>
-      <ListItemLink to="/critterpedia" primary="Critterpedia" icon={<SearchIcon />} />
-      <ListItemLink to="/flowers" primary="Flowers" icon={<SearchIcon />} />
-    </List>
-    </>
+    <div>
+      <div className={classes.drawerToolbar}>
+        <RouterLink className={classes.drawerTitle} to="/">
+          <Typography noWrap component="h1" variant="h4">Nook Phone</Typography>
+        </RouterLink>
+      </div>
+      <Divider />
+      <List>
+        <ListItemLink to="/critterpedia" primary="Critterpedia" icon={<SearchIcon />} onClick={() => setMobileOpen(false)}/>
+        <ListItemLink to="/flowers" primary="Flowers" icon={<SearchIcon />}  onClick={() => setMobileOpen(false)}/>
+      </List>
+    </div>
   );
 
   return (
     <div className={classes.root}>
       <CssBaseline />
-      <AppBar position="fixed" className={classes.appBar}>
-        <Toolbar>
-          <IconButton
-            color="inherit"
-            aria-label="open drawer"
-            edge="start"
-            onClick={handleDrawerToggle}
-            className={classes.menuButton}
-          >
-            <TuneIcon />
-          </IconButton>
-          <Typography className={classes.title} variant="h6" noWrap>
-            New Horizons Critter Companion
-          </Typography>
-        </Toolbar>
-      </AppBar>
       <Router>
-        <nav className={classes.drawer} aria-label="settings and filters">
+        <nav className={classes.drawer}>
           {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
           <Hidden smUp implementation="css">
             <SwipeableDrawer
@@ -169,11 +145,9 @@ export default function ResponsiveDrawer(props) {
           </Hidden>
         </nav>
         <main className={classes.content}>
-          <div className={classes.toolbar}class />
-          <div className={classes.offset} />
-          <Route exact path="/" component={Home}/>
-          <Route path="/critterpedia" component={Critterpedia}/>
-          <Route path="/flowers" component={Flowers}/>
+          <Route exact path="/" render={() => <Home toggleDrawer={handleDrawerToggle}/>}/>
+          <Route path="/critterpedia"  render={() => <Critterpedia toggleDrawer={handleDrawerToggle}/>}/>
+          <Route path="/flowers" render={() => <Flowers toggleDrawer={handleDrawerToggle}/>}/>
         </main>
       </Router>
     </div>
