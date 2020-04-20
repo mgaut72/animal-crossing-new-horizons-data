@@ -11,7 +11,7 @@ import List from '@material-ui/core/List';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
-import Critterpedia from './Critterpedia';
+import Critterpedia from './TabbedCritterpedia';
 import Flowers from './Flowers';
 import Home from './Home';
 import {
