@@ -1,0 +1,51 @@
+%s/\tAll day/, "activeHours": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23]
+%s/\t9 a\.m\. - 4 p\.m\., 9 p\.m\. - 4 a\.m\./, "activeHours": [0, 1, 2, 3, 4, 9, 10, 11, 12, 13, 14, 15, 16, 21, 22, 23]
+%s/\t4 p\.m\. - 9 a\.m\./, "activeHours": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 16, 17, 18, 19, 20, 21, 22, 23]
+%s/\t4 a\.m\. - 9 p\.m\./, "activeHours": [4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21]
+%s/\t9 p\.m\. - 4 a\.m\./, "activeHours": [0, 1, 2, 3, 4, 21, 22, 23]
+%s/\t4 p\.m\. - 10 a\.m\./, "activeHours": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 16, 17, 18, 19, 20, 21, 22, 23]
+
+
+%s/"activeHours": \[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23\]/"activeHours": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23], "times": "All"
+%s/"activeHours": \[0, 1, 2, 3, 4, 9, 10, 11, 12, 13, 14, 15, 16, 21, 22, 23\]/"activeHours": [0, 1, 2, 3, 4, 9, 10, 11, 12, 13, 14, 15, 16, 21, 22, 23], "times": [{"start": 9, "end": 16}, {"start": 21, "end": 4}]
+%s/"activeHours": \[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 16, 17, 18, 19, 20, 21, 22, 23\]/"activeHours": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 16, 17, 18, 19, 20, 21, 22, 23], "times": [{"start": 16, "end": 9}]
+%s/"activeHours": \[4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21\]/"activeHours": [4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21], "times": [{"start": 4, "end": 21}]
+%s/"activeHours": \[0, 1, 2, 3, 4, 21, 22, 23\]/"activeHours": [0, 1, 2, 3, 4, 21, 22, 23], "times": [{"start": 21, "end": 4}]
+%s/"activeHours": \[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 16, 17, 18, 19, 20, 21, 22, 23\]/"activeHours": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 16, 17, 18, 19, 20, 21, 22, 23], "times": [{"start": 16, "end": 10}]
+
+
+%s/\tYear-round (Northern and Southern)/, "activeMonths": {"north": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], "south": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]}, 
+
+%s/\tOctober-July (Northern) \/ April-January (Southern)/, "activeMonths": {"north": [1, 2, 3, 4, 5, 6, 7, 10, 11, 12], "south": [1, 4, 5, 6, 7, 8, 9, 10, 11, 12]}
+
+%s/\tNovember-April (Northern) \/ May-October (Southern)/, "activeMonths": {"north": [1, 2, 3, 4, 11, 12], "south": [5, 6, 7, 8, 9, 10]}
+%s/\tNovember-February (Northern) \/ May-August (Southern)/, "activeMonths": {"north": [1, 2, 11, 12], "south": [5, 6, 7, 8]}
+%s/\tMay-September (Northern) \/ November-March (Southern)/, "activeMonths": {"north": [5, 6, 7, 8, 9], "south": [1, 2, 3, 11, 12]}
+%s/\tJuly-September (Northern) \/ January-March (Southern)/, "activeMonths": {"north": [7, 8, 9], "south": [1, 2, 3]}
+
+%s/\tJune-December (Northern) \/ December-June (Southern)/, "activeMonths": {"north": [6, 7, 8, 9, 10, 11, 12], "south": [1, 2, 3, 4, 5, 6, 12]}
+%s/\tSeptember-February (Northern) \/ March-August (Southern)/, "activeMonths": {"north": [1, 2, 9, 10, 11, 12], "south": [3, 4, 5, 6, 7, 8]}
+%s/\tJune-November (Northern) \/ December-May (Southern)/, "activeMonths": {"north": [6, 7, 8, 9, 10, 11], "south": [1, 2, 3, 4, 5, 12]}
+%s/\tNovember-May (Northern) \/ May-November (Southern)/, "activeMonths": {"north": [1, 2, 3, 4, 5, 11, 12], "south": [5, 6, 7, 8, 9, 10, 11]}
+
+%s/\tJune-January (Northern) \/ December-July (Southern)/, "activeMonths": {"north": [1, 6, 7, 8, 9, 10, 11, 12], "south": [1, 2, 3, 4, 5, 6, 7, 12]}
+%s/\tMarch-June, September-November (Northern) \/ September-December, March-May (Southern)/, "activeMonths": {"north": [3, 4, 5, 6, 9, 10, 11], "south": [3, 4, 5, 9, 10, 11, 12]}
+%s/\tMarch-May, September-December (Northern) \/ March-June, September-November (Southern)/, "activeMonths": {"north": [3, 4, 5, 9, 10, 11, 12], "south": [3, 4, 5, 6, 9, 10, 11]}
+
+
+%s/\tMarch-May, September-November (Northern and Southern)/, "activeMonths": {"north": [3, 4, 5, 9, 10, 11], "south": [3, 4, 5, 9, 10, 11]}
+%s/\tMay-August (Northern) \/ November-February (Southern)/, "activeMonths": {"north": [5, 6, 7, 8], "south": [1, 2, 11, 12]}
+%s/\tMarch-June (Northern) \/ September-December (Southern)/, "activeMonths": {"north": [3, 4, 5, 6], "south": [9, 10, 11, 12]}
+%s/\tNovember-March (Northern) \/ May-September (Southern)/, "activeMonths": {"north": [1, 2, 3, 11, 12], "south": [5, 6, 7, 8, 9]}
+%s/\tMarch-April (Northern) \/ September-October (Southern)/, "activeMonths": {"north": [3, 4], "south": [9, 10]}
+
+
+%s/\tJune-September (Northern) \/ December-March (Southern)/, "activeMonths": {"north": [6, 7, 8, 9], "south": [1, 2, 3, 12]}
+%s/\tOctober-December (Northern) \/ April-June (Southern)/, "activeMonths": {"north": [10, 11, 12], "south": [4, 5, 6]}
+%s/\tApril-June, December-January (Northern) \/ October-December, June-July (Southern)/, "activeMonths": {"north": [1, 4, 5, 6, 12], "south": [6, 7, 10, 11, 12]}
+
+
+%s/\tJuly-October (Northern) \/ January-April (Southern)/, "activeMonths": {"north": [7, 8, 9, 10], "south": [1, 2, 3, 4]}
+%s/\tMay-October (Northern) \/ November-April (Southern)/, "activeMonths": {"north": [5, 6, 7, 8, 9, 10], "south": [1, 2, 3, 4, 11, 12]}
+%s/\tAugust-September (Northern) \/ February-March (Southern)/, "activeMonths": {"north": [8, 9], "south": [2, 3]}
+%s/\tOctober-February (Northern) \/ April-August (Southern)/, "activeMonths": {"north": [1, 2, 10, 11, 12], "south": [4, 5, 6, 7, 8]}

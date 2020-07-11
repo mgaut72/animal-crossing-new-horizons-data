@@ -5,12 +5,13 @@ import CritterGrid from './CritterGrid';
 import './App.css';
 import bugs from "./bugs.js";
 import fish from "./fish.js";
+import seacreatures from "./seacreatures.js";
 import _ from 'lodash';
 import SettingsAndFiltersWrapper from './Nav';
 import useLocalStorage, { useLocalStorageSet } from './LocalStorage';
 import { isCurrentlyActive, endsThisMonth, newThisMonth } from './DateTimeUtils';
 
-const allCritters = [...bugs, ...fish];
+const allCritters = [...bugs, ...fish, ...seacreatures];
 
 function fuse(searchList, searchVal) {
   var opts = {
@@ -52,6 +53,7 @@ export default function CritterCompanion() {
   const [dataSets, setDataSets] = useState({
     bugs: {enabled: true, label: "Bugs"},
     fish: {enabled: true, label: "Fish"},
+    seacreatures: {enabled: true, label: "Sea Creatures"},
   });
 
 
@@ -65,6 +67,7 @@ export default function CritterCompanion() {
         && (!filtersState.notInMuseum.enabled || !museum.has(c.name))
         && (c.type === "Bug" ? dataSets.bugs.enabled : true)
         && (c.type === "Fish" ? dataSets.fish.enabled : true)
+        && (c.type === "Sea Creature" ? dataSets.seacreatures.enabled : true)
   });
 
   const sortedCritters = sortFncs[sortBy](filteredCritters);
