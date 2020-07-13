@@ -24,7 +24,7 @@
   "scripts": {
     "prestart": "npm run preinstall",
     "start": "react-scripts start",
-    "preinstall": "cat data/bugs.jsonl | (echo 'export default ' && scripts/to-json-array) > src/bugs.js; cat data/fish.jsonl | (echo 'export default ' && scripts/to-json-array) > src/fish.js; cat data/seacreatures.jsonl | (echo 'export default ' && scripts/to-json-array) > src/seacreatures.js",
+    "preinstall": "buildscripts/preinstall.sh",
     "prebuild": "npm run preinstall",
     "build": "react-scripts build",
     "test": "react-scripts test",

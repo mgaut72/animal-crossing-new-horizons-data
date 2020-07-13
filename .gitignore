@@ -26,3 +26,4 @@ yarn-error.log*
 src/bugs.js
 src/fish.js
 src/seacreatures.js
+src/CritterIcons.js
