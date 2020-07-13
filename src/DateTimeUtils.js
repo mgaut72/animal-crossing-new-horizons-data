@@ -84,15 +84,17 @@ export function isCurrentlyActive(creature, hemisphere) {
 }
 
 export function endsThisMonth(creature, hemisphere) {
-  return creature.months === "All"
-    ? false
-    : creature.months[hemisphere].some((rng) => {return rng.end === (new Date().getMonth() + 1)});
+  const currMonth = new Date().getMonth() + 1;
+  const nextMonth = (currMonth % 12) + 1;  // 1 indexing was probably a mistake
+  return isMonthActive(currMonth, creature, hemisphere) && !isMonthActive(nextMonth, creature, hemisphere);
 }
 
 export function newThisMonth(creature, hemisphere) {
-  return creature.months === "All"
-    ? false
-    : creature.months[hemisphere].some((rng) => {return rng.start === (new Date().getMonth() + 1)});
+  const currMonthZero = new Date().getMonth();
+  const prevMonthZero = ((currMonthZero + 11) % 12);  // 1 indexing was probably a mistake
+  const currMonth = currMonthZero + 1;
+  const prevMonth = prevMonthZero + 1;
+  return isMonthActive(currMonth, creature, hemisphere) && !isMonthActive(prevMonth, creature, hemisphere);
 }
 
 export const allMonths  = [...Array(12).keys()].map(x => x +1);
