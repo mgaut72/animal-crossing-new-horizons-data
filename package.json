@@ -14,7 +14,7 @@
     "clsx": "^1.1.0",
     "fuse.js": "^5.0.10-beta",
     "jquery": "^3.4.1",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.23",
     "mdi-material-ui": "^6.13.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
